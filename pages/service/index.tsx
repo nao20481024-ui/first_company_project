@@ -5,28 +5,31 @@ import LineDivider from 'components/atoms/LineDivider'
 import Image from 'next/image'
 import SectionSentence from 'components/molecules/SectionSentence'
 import {
-  FiArrowUp,
-  FiCheckCircle,
-  FiDownload,
-  FiGlobe,
-  FiLayout,
-  FiMonitor,
-  FiRefreshCcw,
-  FiSmartphone,
+  FiActivity,
+  FiCpu,
+  FiDatabase,
+  FiGitBranch,
+  FiLayers,
+  FiShield,
 } from 'react-icons/fi'
 import SmallCardIcon from 'components/molecules/Card/SmallCardIcon'
 import CardListIcon from 'components/molecules/Card/CardListIcon'
 import TextArrowLink from 'components/molecules/TextArrowLink'
 import IconListItem from 'components/molecules/IconListItem'
+import { ja, sohujiCopy } from 'constants/sohujiCopy'
+
+const { capabilities, brand } = sohujiCopy
+
 const Services = () => {
   return (
     <>
-      <PageTemplate title='Service - Collosal'>
+      <PageTemplate title={`${capabilities.badge} - ${brand.name}`}>
         <section className="grid place-items-center" data-aos="zoom-in-up">
           <div className="text-center sm:w-10/12 md:w-8/12 lg:w-6/12">
             <PageSentence
-              badge="SERVICES"
-              title="We are here to help solve your company's problems"
+              badge={capabilities.badge}
+              title={capabilities.title}
+              description={capabilities.description}
             />
           </div>
         </section>
@@ -38,32 +41,38 @@ const Services = () => {
                 src={'/images/ui-design-illustration.svg'}
                 layout="fill"
                 objectFit="fill"
-                alt='UI Design'
+                alt="Agentic AI systems"
               />
             </figure>
           </aside>
           <aside className="grid gap-12 place-items-center" data-aos="fade-up-left">
             <div className="sm:w-10/12 md:w-8/12 lg:w-full text-center lg:text-left">
               <SectionSentence
-                badge="UI DESIGN"
-                title="Don't let your idea get caught by others, design a prototype for your idea"
-                paragraph="Delegate your ideas as quickly as possible, create beautiful designs and vivid prototypes."
+                badge={capabilities.agentic.badge}
+                title={capabilities.agentic.title}
+                paragraph={capabilities.agentic.paragraph}
               />
             </div>
             <div className="grid gap-6 w-full place-items-end md:w-8/12 lg:w-full">
               <aside className="w-full grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <SmallCardIcon
-                  title="Beautiful Design"
-                  description="Create a modern design for your idea."
-                  icon={<FiLayout />}
+                  title={ja('Tool schemas', 'ツールスキーマ')}
+                  description={ja(
+                    'Typed function calling with guardrails for support, GTM, and ops.',
+                    'サポート・GTM・運用向けガードレール付き関数呼び出し'
+                  )}
+                  icon={<FiCpu />}
                 />
                 <SmallCardIcon
-                  title="Prototype"
-                  description="Create vivid prototypes for your designs."
-                  icon={<FiLayout />}
+                  title={ja('Eval harnesses', '評価ハーネス')}
+                  description={ja(
+                    'Offline eval sets and refusal tracking before customer-facing rollout.',
+                    '顧客向けロールアウト前のオフライン評価と拒否率追跡'
+                  )}
+                  icon={<FiActivity />}
                 />
               </aside>
-              <TextArrowLink label="Service Detail" href="/service/detail" />
+              <TextArrowLink label={ja('Capability detail', '機能詳細')} href="/service/detail" />
             </div>
           </aside>
         </section>
@@ -71,24 +80,27 @@ const Services = () => {
           <aside className="grid gap-12 place-items-center" data-aos="fade-up-right">
             <div className="sm:w-10/12 md:w-8/12 lg:w-full text-center lg:text-left">
               <SectionSentence
-                badge="DEVELOPMENT"
-                title="Create solutions to repetitive problems, design applications and access anywhere!"
-                paragraph="Just tell us your repetitive problem or the primitive method used today, and we will create a digital solution."
+                badge={capabilities.ragMcp.badge}
+                title={capabilities.ragMcp.title}
+                paragraph={capabilities.ragMcp.paragraph}
               />
             </div>
             <div className="grid gap-6 w-full place-items-end md:w-8/12 lg:w-full">
               <aside className="w-full grid grid-cols-1 gap-5">
                 <CardListIcon
-                  icon={<FiSmartphone />}
-                  title="Mobile App Development"
+                  icon={<FiDatabase />}
+                  title={ja('RAG & knowledge operations', 'RAGとナレッジ運用')}
                 />
                 <CardListIcon
-                  icon={<FiMonitor />}
-                  title="Desktop App Development"
+                  icon={<FiLayers />}
+                  title={ja('MCP-style tool surfaces', 'MCP型ツール面')}
                 />
-                <CardListIcon icon={<FiGlobe />} title="Web Development" />
+                <CardListIcon
+                  icon={<FiShield />}
+                  title={ja('Least-privilege access', '最小権限アクセス')}
+                />
               </aside>
-              <TextArrowLink label="Service Detail" href="/service/detail" />
+              <TextArrowLink label={ja('Capability detail', '機能詳細')} href="/service/detail" />
             </div>
           </aside>
           <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full" data-aos="fade-up-left">
@@ -97,7 +109,7 @@ const Services = () => {
                 src={'/images/development-illustration.svg'}
                 layout="fill"
                 objectFit="fill"
-                alt='IDE for development'
+                alt="Integration and retrieval architecture"
               />
             </figure>
           </aside>
@@ -109,26 +121,38 @@ const Services = () => {
                 src={'/images/maintenance-illustration.svg'}
                 layout="fill"
                 objectFit="fill"
-                alt='server maintenance'
+                alt="n8n workflow operations"
               />
             </figure>
           </aside>
           <aside className="grid gap-12 place-items-center" data-aos="fade-up-left">
             <div className="sm:w-10/12 md:w-8/12 lg:w-full text-center lg:text-left">
               <SectionSentence
-                badge="MAINTENANCE"
-                title="Think of your server as your own child, taking care of it every day"
-                paragraph="We will back up your servers every day, clean them every week, upgrade them when there is an update."
+                badge={capabilities.n8nObs.badge}
+                title={capabilities.n8nObs.title}
+                paragraph={capabilities.n8nObs.paragraph}
               />
             </div>
             <div className="grid gap-6 w-full place-items-end md:w-8/12 lg:w-full">
               <aside className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
-                <IconListItem icon={<FiDownload />} value='Back up every day' />
-                <IconListItem icon={<FiArrowUp />} value='Upgrade' />
-                <IconListItem icon={<FiRefreshCcw />} value='Cleaning every week' />
-                <IconListItem icon={<FiCheckCircle />} value='Fixing Error' />
+                <IconListItem
+                  icon={<FiGitBranch />}
+                  value={ja('Sub-workflows & DLQ paths', 'サブワークフローとDLQ')}
+                />
+                <IconListItem
+                  icon={<FiActivity />}
+                  value={ja('Token & latency SLOs', 'トークン・レイテンシSLO')}
+                />
+                <IconListItem
+                  icon={<FiCpu />}
+                  value={ja('Native AI Agent nodes', 'ネイティブAI Agentノード')}
+                />
+                <IconListItem
+                  icon={<FiShield />}
+                  value={ja('Audit-ready logs', '監査対応ログ')}
+                />
               </aside>
-              <TextArrowLink label="Service Detail" href="/service/detail" />
+              <TextArrowLink label={ja('Capability detail', '機能詳細')} href="/service/detail" />
             </div>
           </aside>
         </section>

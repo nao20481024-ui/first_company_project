@@ -3,116 +3,63 @@ import Text from 'components/atoms/Text'
 import PricingCard from 'components/molecules/Card/PricingCard'
 import PageSentence from 'components/molecules/PageSentence'
 import PageTemplate from 'components/templates/PageTemplate'
+import { ja, sohujiCopy } from 'constants/sohujiCopy'
 import Link from 'next/link'
 import React from 'react'
 import randomString from 'utils/randomString'
 
-const Pricing = () => {
-  interface Faq {
-    title: string
-    description: string
-  }
-  const faqs: Faq[] = [
-    {
-      title: `How is the payment system?`,
-      description: `If the project has agreed, you will pay an advance, and when the progress reaches 50% you will make a second payment, and when the progress is 100% you will pay it off.`,
-    },
-    {
-      title: `Can I consult first?`,
-      description: `Of course you can consult us first. We are very happy to help your problems and provide our best solutions. You can contact us via the contact page.`,
-    },
-    {
-      title: `What if the project stops halfway?`,
-      description: `We promise to always finish the project on time, if a problem occurs (because of our mistake), all payments will be refunded. And the project will be terminated.`,
-    },
-    {
-      title: `Does it include servers and domains?`,
-      description: `You don't need to think about anything else, we have everything prepared. You just need to check your progress and make sure the features you want are the right one.`,
-    },
-    {
-      title: `Will I get the source code?`,
-      description: `When the project is 100% complete, all the resources, such as design files, analysis diagrams, source code, etc. will be provided to you. You don't need to worry about this.`,
-    },
-    {
-      title: `Is there a warranty?`,
-      description: `1 year warranty for our errors or mistakes. If you want to add a feature that is not included in the warranty, there is another fee per feature, and the price depends on the difficulty.`,
-    },
-  ]
+const { home, faq, brand } = sohujiCopy
 
+const Pricing = () => {
   return (
-    <PageTemplate>
+    <PageTemplate title={`${ja('Engagement', 'エンゲージメント')} - ${brand.name}`}>
       <section className="grid grid-cols-1 place-items-center">
         <div
           className="sm:w-10/12 md:8/12 lg:w-6/12 text-center"
           data-aos="zoom-in-up"
         >
           <PageSentence
-            badge="PRICING"
-            title="What do you need? Choose a service that can help you"
+            badge={home.engagement.badge}
+            title={ja(
+              'Discovery through operated systems—scoped to measurable outcomes',
+              '運用システムまでのディスカバリー—測定可能な成果にスコープ'
+            )}
           />
         </div>
       </section>
       <LineDivider />
       <section className="w-full grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-        <div data-aos="fade-up">
-          <PricingCard
-            price="1200$"
-            title="UI Design"
-            features={[
-              '10 design pages',
-              'Well-documented',
-              '4 revisions',
-              '$100/additional page',
-            ]}
-          />
-        </div>
-        <div data-aos="fade-up">
-          <PricingCard
-            price="5000$"
-            title="Development"
-            features={[
-              'Web & Mobile',
-              'Well-documented',
-              '8 revisions',
-              '$1000/additional page',
-            ]}
-          />
-        </div>
-        <div data-aos="fade-up">
-          <PricingCard
-            price="3000$"
-            title="Maintenance"
-            features={[
-              'Daily backup',
-              '3 hours of maintenance',
-              'Including fixing',
-              '$50/additional hour',
-            ]}
-          />
-        </div>
+        {home.engagement.phases.map((phase) => (
+          <div key={phase.title} data-aos="fade-up">
+            <PricingCard
+              price={ja('Scoped', 'スコープ見積')}
+              title={phase.title}
+              features={phase.features}
+            />
+          </div>
+        ))}
       </section>
       <section className="grid place-items-center gap-16">
         <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center" data-aos="zoom-in-up">
-          <PageSentence
-            badge="FAQ"
-            title="Frequently asked questions, maybe the same as yours"
-          />
+          <PageSentence badge={faq.badge} title={faq.title} />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-x-7">
-          {faqs.map((faq) => {
+          {faq.items.slice(0, 6).map((item) => {
             return (
               <div className="grid gap-2.5" key={randomString(64)} data-aos="fade-right">
-                <Text textStyle="FAQTitle" value={faq.title} />
-                <Text textStyle="FAQDescription" value={faq.description} />
+                <Text textStyle="FAQTitle" value={item.title} />
+                <Text textStyle="FAQDescription" value={item.description} />
               </div>
             )
           })}
         </div>
         <div className="text-white text-base font-medium text-center">
-          {`Didn't find an answer? `}
+          {ja("Didn't find an answer?", '回答が見つかりませんか？')}{' '}
           <div className="sm:hidden"></div>
           <div className="text-primary inline select-none">
-            <Link href={'/quote'}>Do not hesitate to ask!</Link>
+            <Link href={'/contact'}>
+              {ja('Book a technical discovery session.', '技術ディスカバリーを予約する。')}
+            </Link>
           </div>
         </div>
       </section>

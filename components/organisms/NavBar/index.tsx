@@ -7,6 +7,7 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import UAParser from 'ua-parser-js'
 import useMobileDeviceDetection from 'hooks/useMobileDetection'
 import useGetBrowserName from 'hooks/useGetBrowserName'
+import { sohujiCopy } from 'constants/sohujiCopy'
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [isScrolled, setIsScrolled] = useState<boolean>(false)
@@ -63,24 +64,24 @@ const NavBar = () => {
                   isOpen ? '' : 'hidden '
                 }space-y-5 mt-4 lg:mt-0 lg:space-y-0 lg:space-x-16 lg:flex lg:place-items-center`}
               >
-                <NavLink href="/service" value="Services" canActive={true} />
+                <NavLink href="/service" value={sohujiCopy.nav.capabilities} canActive={true} />
                 <NavLink
                   href="/how-we-work"
-                  value="How We Work"
+                  value={sohujiCopy.nav.delivery}
                   canActive={true}
                 />
-                <NavLink href="/project" value="Project" canActive={true} />
-                <NavLink href="/about" value="About" canActive={true} />
+                <NavLink href="/project" value={sohujiCopy.nav.solutions} canActive={true} />
+                <NavLink href="/about" value={sohujiCopy.nav.about} canActive={true} />
               </div>
               <div
                 className={`${isOpen ? '' : 'hidden '}lg:block mt-5 lg:mt-0`}
               >
                 <ButtonLink
-                  value="Contact"
+                  value={sohujiCopy.nav.discovery}
                   style="light"
                   color="white"
                   size="small"
-                  href="/contact"
+                  href="/quote"
                 />
               </div>
             </div>

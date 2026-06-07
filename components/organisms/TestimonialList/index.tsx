@@ -40,25 +40,25 @@ const TestimonialList = () => {
         <SwiperSlide className='mt-10'>
           <TestimonialCard
             avatarSrc="/images/testimonial-avatar.png"
-            name="Esther Howard"
-            company="Abstergo Ltd."
-            testimony={`"Your company is truly upstanding and is behind its product 100%. It's the perfect solution for our business. It has really helped our business."`}
+            name="Platform Lead"
+            company="Enterprise SaaS"
+            testimony={`"Sohuji shipped our agent review queue with eval gates and trace correlation—we finally measure model behavior under real traffic instead of guessing from demos."`}
           />
         </SwiperSlide>
         <SwiperSlide className='mt-10'>
           <TestimonialCard
             avatarSrc="/images/testimonial-avatar-2.png"
-            name="Esther Howard"
-            company="Abstergo Ltd."
-            testimony={`"Your company is truly upstanding and is behind its product 100%. It's the perfect solution for our business. It has really helped our business."`}
+            name="Head of Ops"
+            company="Support automation"
+            testimony={`"They hardened our n8n graphs with DLQ paths and queue-mode execution. Failure rates dropped before our team even noticed the spike."`}
           />
         </SwiperSlide>
         <SwiperSlide className='mt-10'>
           <TestimonialCard
             avatarSrc="/images/testimonial-avatar-3.png"
-            name="Esther Howard"
-            company="Abstergo Ltd."
-            testimony={`"Your company is truly upstanding and is behind its product 100%. It's the perfect solution for our business. It has really helped our business."`}
+            name="Engineering Director"
+            company="Data platform"
+            testimony={`"RAG with cited context, refresh jobs, and offline evals—delivered as operated infrastructure, not a one-off prototype."`}
           />
         </SwiperSlide>
       </Swiper>

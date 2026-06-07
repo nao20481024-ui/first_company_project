@@ -9,12 +9,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import {
-  FiClock,
-  FiCode,
-  FiFigma,
-  FiLayout,
+  FiActivity,
+  FiCpu,
+  FiGitBranch,
+  FiLayers,
+  FiShield,
   FiTrendingUp,
-  FiZap,
 } from 'react-icons/fi'
 import randomString from 'utils/randomString'
 
@@ -25,72 +25,73 @@ const ServiceDetail = () => {
   }
   const faqs: Faq[] = [
     {
-      title: `How is the payment system?`,
-      description: `If the project has agreed, you will pay an advance, and when the progress reaches 50% you will make a second payment, and when the progress is 100% you will pay it off.`,
+      title: `How do you ship RAG that survives production traffic?`,
+      description: `Retrieval is treated as a data product: connectors, chunking and metadata, hybrid search where ROI is clear, staleness detection, and answers constrained to cited context. We gate rollout behind scope limits, policy prompts, and PII redaction.`,
     },
     {
-      title: `Can I consult first?`,
-      description: `Of course you can consult us first. We are very happy to help your problems and provide our best solutions. You can contact us via the contact page.`,
+      title: `Where do you draw the line between agents and deterministic workflows?`,
+      description: `Ambiguous work gets tool-augmented agent loops with budgets and timeouts; money-moving and SLA-critical steps live in explicit graphs with typed I/O and idempotency keys. HITL gates prevent silent changes to authoritative state.`,
     },
     {
-      title: `What if the project stops halfway?`,
-      description: `We promise to always finish the project on time, if a problem occurs (because of our mistake), all payments will be refunded. And the project will be terminated.`,
+      title: `Which n8n patterns do you standardize for scale?`,
+      description: `Composable sub-workflows, dedicated error and DLQ paths, queue mode when throughput requires it, secrets via your vault, execution records suitable for replay, and alerting on failure rate, p95 latency, and queue depth.`,
     },
     {
-      title: `Does it include servers and domains?`,
-      description: `You don't need to think about anything else, we have everything prepared. You just need to check your progress and make sure the features you want are the right one.`,
+      title: `How do you keep LLM calls inside n8n maintainable?`,
+      description: `Orchestration stays in the graph; model policy lives in versioned prompts, structured outputs, and explicit schemas for tools and HTTP steps. Streaming when UX demands it; batching otherwise for simpler retries and cost attribution.`,
     },
     {
-      title: `Will I get the source code?`,
-      description: `When the project is 100% complete, all the resources, such as design files, analysis diagrams, source code, etc. will be provided to you. You don't need to worry about this.`,
+      title: `What does observability and cost control look like end to end?`,
+      description: `Correlated request IDs across workflows and model calls, token and latency dashboards by route, redacted failure payloads for replays, concurrency caps aligned with provider limits, and staged rollouts when changes touch customer-visible behavior.`,
     },
     {
-      title: `Is there a warranty?`,
-      description: `1 year warranty for our errors or mistakes. If you want to add a feature that is not included in the warranty, there is another fee per feature, and the price depends on the difficulty.`,
+      title: `Do you build operator software on top of automations?`,
+      description: `Yes—review queues, approvals, admin consoles, and external portals so teams override, annotate, and replay runs without touching the canvas. Those surfaces often close the loop into eval labels and improved retrieval or prompt versions.`,
     },
   ]
   const features: FeatureCardProps[] = [
     {
-      title: 'Design Files',
+      title: 'Eval harnesses',
       description:
-        'Projects are well designed using Figma. You will get the design file.',
-      icon: <FiFigma />,
+        'Held-out eval sets, precision/recall proxies, and refusal rates tracked before and after rollout.',
+      icon: <FiActivity />,
     },
     {
-      title: 'Same Day',
-      description: `We don't want you to wait long. Everything will be finished on the same day.`,
-      icon: <FiClock />,
+      title: 'Tool contracts',
+      description: `MCP-style typed surfaces with governed access and replay-friendly execution.`,
+      icon: <FiLayers />,
     },
     {
-      title: 'Quality Code',
-      description: `Code written according to good practice is highly maintainable.`,
-      icon: <FiCode />,
+      title: 'Versioned prompts',
+      description: `Model policy in versioned prompts and explicit schemas—not ad-hoc canvas edits in production.`,
+      icon: <FiCpu />,
     },
     {
-      title: 'SEO',
+      title: 'Trace correlation',
       description:
-        'The website will appear on the first page of the search engine.',
+        'End-to-end traces across workflows and model calls with token and latency SLOs.',
       icon: <FiTrendingUp />,
     },
     {
-      title: 'Responsive Design',
-      description: `Access the website on any device, don't limit your visitors.`,
-      icon: <FiLayout />,
+      title: 'Failure-mode design',
+      description: `Idempotency keys, bounded retries, poison-message handling, and crisp orchestration boundaries.`,
+      icon: <FiShield />,
     },
     {
-      title: 'Blazing Fast',
+      title: 'Queue-aware n8n',
       description:
-        'A high speed website will not disappoint prospective customers.',
-      icon: <FiZap />,
+        'Sub-workflows, DLQ branches, and horizontal workers when throughput or long jobs require it.',
+      icon: <FiGitBranch />,
     },
   ]
   return (
-    <PageTemplate title="Service Detail - Collosal">
+    <PageTemplate title="Capabilities - Sohuji">
       <section className="grid place-items-center">
         <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center" data-aos="zoom-in-up">
           <PageSentence
-            badge="DEVELOPMENT"
-            title="Solve your company's repetitive problems by designing apps"
+            badge="CAPABILITIES"
+            title="Harden your AI and automation footprint for production traffic"
+            description="We partner on agentic systems, retrieval pipelines, MCP-style integrations, and n8n operations—with evals, tracing, and release hygiene your platform org expects."
           />
         </div>
       </section>
@@ -102,7 +103,7 @@ const ServiceDetail = () => {
               src={'/images/development-illustration.svg'}
               layout="fill"
               objectFit="fill"
-              alt="IDE that connect to Desktop, Mobile and Web mean multiple platform"
+              alt="Production AI and workflow architecture"
             />
           </figure>
         </aside>
@@ -110,15 +111,15 @@ const ServiceDetail = () => {
           <div className="sm:w-10/12 md:w-8/12 lg:w-full lg:text-left grid gap-10">
             <div className="grid gap-8">
               <Text
-                value={`Just tell us your repetitive problem or the primitive method used today, and we will create a digital solution. <br> <br> We can build you a website, a mobile app and a desktop app. All types of applications have a good security system, are easy to maintain, and are high speed. `}
+                value={`From greenfield portals to hardening existing graphs and model routes, we scope to measurable outcomes and ship with staging paths, rollback, and runbooks—not slideware. <br> <br> Customer and internal web apps, agentic and RAG workloads, and n8n at queue-aware scale—all with observability, contracts, and release discipline expected of core infrastructure.`}
                 textStyle={'SectionParagraph'}
               />
             </div>
             <ul className="list-square text-white text-base font-medium pl-5 grid gap-2.5">
-              <li>Avoid potential bugs with unit testing</li>
-              <li>Removing unused code will speed up the application</li>
-              <li>The modern design pleases the users</li>
-              <li>A good UX will not disappoint users</li>
+              <li>RAG with eval harnesses, tool schemas, and guardrails</li>
+              <li>MCP-style exposure with HITL gates and mutation guards</li>
+              <li>Operator UIs for review queues, approvals, and replay</li>
+              <li>Trace-driven iteration after cutover, not ad-hoc prompt edits</li>
             </ul>
           </div>
           <div className="grid gap-6 w-full place-items-end md:w-8/12 lg:w-full"></div>
@@ -127,8 +128,8 @@ const ServiceDetail = () => {
       <section className="grid place-items-center gap-16">
         <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center" data-aos="zoom-in-up">
           <PageSentence
-            badge=" FEATURES"
-            title="Here's what you will get when purchasing this service"
+            badge="DELIVERY"
+            title="Production patterns we standardize across engagements"
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -150,7 +151,7 @@ const ServiceDetail = () => {
         <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center" data-aos="zoom-in-up">
           <PageSentence
             badge="FAQ"
-            title="Frequently asked questions, maybe the same as yours"
+            title="Production patterns: RAG, agents, n8n, observability, and operator software"
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-x-7">
@@ -164,10 +165,10 @@ const ServiceDetail = () => {
           })}
         </div>
         <div className="text-white text-base font-medium">
-          {`Didn't find an answer? `}
+          {`Need an architecture review? `}
           <div className="sm:hidden"></div>
           <div className="text-primary inline">
-            <Link href={'/quote'}>Do not hesitate to ask!</Link>
+            <Link href={'/contact'}>Book a technical discovery session.</Link>
           </div>
         </div>
       </section>

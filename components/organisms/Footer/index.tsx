@@ -1,7 +1,10 @@
 import NavBrand from 'components/atoms/NavBrand'
 import NavLink from 'components/atoms/NavLink'
 import Text from 'components/atoms/Text'
+import { ja, sohujiCopy } from 'constants/sohujiCopy'
 import React from 'react'
+
+const { brand, nav } = sohujiCopy
 
 const Footer = () => {
   return (
@@ -10,54 +13,61 @@ const Footer = () => {
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-16 xl:gap-20">
           <div className="space-y-5">
             <NavBrand />
-            <div className="">
+            <div className="max-w-sm">
+              <Text value={brand.tagline} textStyle="SectionParagraph" />
+              <Text value={brand.footerLine} textStyle="SectionParagraph" />
               <Text
-                value={`Copyright © ${new Date().getFullYear()}`}
-                textStyle="SectionParagraph"
-              />
-              <Text
-                value={`Design By Collosal LLC`}
+                value={brand.copyright(new Date().getFullYear())}
                 textStyle="SectionParagraph"
               />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:gap-16 xl:gap-20">
             <div className="space-y-5">
-              <Text value="SERVICES" textStyle="FooterLinkGroupTitle" />
+              <Text value={ja('SOLUTIONS', 'ソリューション')} textStyle="FooterLinkGroupTitle" />
               <div className="space-y-[10px]">
                 <NavLink
-                  value="Web Development"
+                  value={ja('Agentic AI & RAG', 'エージェント型AIとRAG')}
                   href="/service/detail"
                 />
                 <NavLink
-                  value="App Development"
+                  value={ja('MCP Integrations', 'MCP型統合')}
                   href="/service/detail"
                 />
-                <NavLink value="UI Design" href="/service/detail" />
-                <NavLink value="Consultation" href="/service/detail" />
-                <NavLink value="Maintenance" href="/service/detail" />
-                <NavLink value="Pricing" href="/pricing" />
+                <NavLink
+                  value={ja('n8n Orchestration', 'n8nオーケストレーション')}
+                  href="/service/detail"
+                />
+                <NavLink
+                  value={ja('Observability & Evals', '可観測性と評価')}
+                  href="/service/detail"
+                />
+                <NavLink
+                  value={ja('Operator UIs', '運用者向けUI')}
+                  href="/service/detail"
+                />
+                <NavLink value={ja('Engagement', 'エンゲージメント')} href="/pricing" />
               </div>
             </div>
             <div className="space-y-5">
-              <Text value="COMPANY" textStyle="FooterLinkGroupTitle" />
+              <Text value={ja('COMPANY', '会社')} textStyle="FooterLinkGroupTitle" />
               <div className="space-y-[10px]">
-                <NavLink value="About" href="/about" />
-                <NavLink value="Contact" href="/contact" />
-                <NavLink value="Send Quote" href="/quote" />
-                <NavLink value="Privacy Policy" href="/privacy-policy" />
-                <NavLink value="Term of Service" href="/term-of-service" />
-                <NavLink value="Jobs" href="/jobs" />
-                <NavLink value="Blogs" href="/blog" />
+                <NavLink value={nav.about} href="/about" />
+                <NavLink value={ja('Contact', 'お問い合わせ')} href="/contact" />
+                <NavLink value={nav.discovery} href="/quote" />
+                <NavLink value={ja('Privacy Policy', 'プライバシーポリシー')} href="/privacy-policy" />
+                <NavLink value={ja('Term of Service', '利用規約')} href="/term-of-service" />
+                <NavLink value={ja('Jobs', '採用')} href="/jobs" />
+                <NavLink value={ja('Blogs', 'ブログ')} href="/blog" />
               </div>
             </div>
             <div className="space-y-5">
-              <Text value="RESOURCES" textStyle="FooterLinkGroupTitle" />
+              <Text value={ja('RESOURCES', 'リソース')} textStyle="FooterLinkGroupTitle" />
               <div className="space-y-[10px]">
-                <NavLink value="Support" href="/support" />
-                <NavLink value="Documentation" href="/documentation" />
-                <NavLink value="License" href="/license" />
-                <NavLink value="Sitemap" href="/sitemap" />
+                <NavLink value={ja('Support', 'サポート')} href="/support" />
+                <NavLink value={ja('Documentation', 'ドキュメント')} href="/documentation" />
+                <NavLink value={ja('License', 'ライセンス')} href="/license" />
+                <NavLink value={ja('Sitemap', 'サイトマップ')} href="/sitemap" />
               </div>
             </div>
           </div>

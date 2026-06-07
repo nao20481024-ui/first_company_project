@@ -5,24 +5,27 @@ import SelectGroup from 'components/molecules/FormGroup/SelectGroup'
 import TextAreaGroup from 'components/molecules/FormGroup/TextAreaGroup'
 import PageSentence from 'components/molecules/PageSentence'
 import PageTemplate from 'components/templates/PageTemplate'
+import { ja, sohujiCopy } from 'constants/sohujiCopy'
 import React from 'react'
+
+const { discovery, brand } = sohujiCopy
 
 const Quote = () => {
   return (
     <>
-      <PageTemplate title='Send Quote - Collosal'>
+      <PageTemplate title={`${discovery.badge} - ${brand.name}`}>
         <section className="grid grid-cols-1 place-items-center gap-5 lg:grid-cols-2">
           <aside className="w-full sm:w-10/12 md:w-8/12 grid grid-cols-1 place-items-center gap-12 lg:w-full lg:place-items-start" data-aos="fade-down-right">
             <div className="text-center lg:text-left">
               <PageSentence
-                title="Tell us about your problem and how we can help"
-                description="We are happy to help you, tell us what is the problem with your company, and we are ready to answer these problems. It usually takes a few minutes for us to respond."
-                badge="SEND QUOTE"
+                title={discovery.title}
+                description={discovery.description}
+                badge={discovery.badge}
               />
             </div>
             <div className="w-fit">
               <ButtonLink
-                value="Ask Us"
+                value={ja('Read FAQ', 'FAQを読む')}
                 href="/faq"
                 color="white"
                 style="light"
@@ -32,22 +35,23 @@ const Quote = () => {
           <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full lg:flex lg:justify-end" data-aos="fade-up-left">
             <div className="grid grid-cols-1 gap-7 p-6 md:p-9 bg-light rounded-md lg:w-10/12 ">
               <div className="grid grid-cols-2 gap-4">
-                <InputGroup label="Name" />
-                <InputGroup label="Email" />
+                <InputGroup label={ja('Name', 'お名前')} />
+                <InputGroup label={ja('Email', 'メール')} />
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <InputGroup label="Company" />
+                <InputGroup label={ja('Company', '会社名')} />
                 <SelectGroup
-                  label="Company Size"
+                  label={ja('Focus area', '重点領域')}
                   options={[
-                    { label: 'Small', value: 'small' },
-                    { label: 'Medium', value: 'medium' },
-                    { label: 'Large', value: 'large' },
+                    { label: ja('Agentic AI', 'エージェント型AI'), value: 'agentic' },
+                    { label: ja('RAG & retrieval', 'RAG・検索'), value: 'rag' },
+                    { label: ja('n8n & automation', 'n8n・自動化'), value: 'n8n' },
+                    { label: ja('Operator UI', '運用者向けUI'), value: 'ui' },
                   ]}
                 />
               </div>
-              <TextAreaGroup label="Tell Us Your Problem" />
-              <Button value="Send Quote" />
+              <TextAreaGroup label={ja('Describe your stack and goals', 'スタックと目標')} />
+              <Button value={discovery.submit} />
             </div>
           </aside>
         </section>
