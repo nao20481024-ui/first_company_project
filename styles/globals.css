@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,4 +35,20 @@
   .swiper-slide-active {
     @apply border-2 border-primary mt-0 !important;
   }
+}
+
+/* Page background — SVG from /images/page-background.svg, animated via rAF */
+.page-background-root {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: #0b0b22;
+}
+
+.page-background-root svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }

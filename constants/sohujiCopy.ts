@@ -16,10 +16,12 @@ export const sohujiCopy = {
       'Sohuji (ソウフジ) — production LLM (本番向けLLM), agentic AI (エージェント型AI), RAG (検索拡張生成), n8n automation (自動化), and operator UIs (運用者向けUI) with observability (可観測性) and release discipline (リリース規律).',
   },
   nav: {
+    home: 'Home',
     capabilities: 'Capabilities',
+    principles: 'Principles',
     delivery: 'Delivery',
+    contact: 'Contact',
     solutions: 'Solutions',
-    about: 'About',
     discovery: 'Discovery',
   },
   home: {
@@ -28,122 +30,131 @@ export const sohujiCopy = {
       'Production LLM (本番向けLLM) and agentic systems (エージェント型システム)',
     description:
       'Tool use (ツール利用), structured outputs (構造化出力), offline evals (オフライン評価), and telemetry (テレメトリ) keep model behavior (モデル挙動) measurable and operable under production traffic (本番トラフィック).',
-    ctaDiscovery: ja('Book technical discovery', '技術ディスカバリー'),
-    ctaCapabilities: ja('View capabilities', '機能を見る'),
-    features: [
-      {
-        title: ja('Agentic AI', 'エージェント型AI'),
-        description:
-          'Production assistants with tool/function calling (ツール／関数呼び出し), structured outputs (構造化出力), and HITL checkpoints (人による確認ポイント)—grounded in your tickets, docs, and CRM (顧客管理) data.',
-      },
-      {
-        title: ja('MCP Integrations', 'MCP型統合'),
-        description:
-          'Typed tool surfaces and HTTP contracts (HTTP契約) connecting LLMs (大規模言語モデル) and workflows to warehouses, CRMs, and internal APIs—with governed access and least privilege (最小権限).',
-      },
-      {
-        title: ja('n8n Orchestration', 'n8nオーケストレーション'),
-        description:
-          'Graphs built for scale: sub-workflows, error and DLQ branches (デッドレターキュー), queue mode–friendly execution (キューモード向け実行), and native AI Agent nodes.',
-      },
-    ],
-    delivery: {
-      badge: ja('DELIVERY', 'デリバリー'),
-      title: ja('Discovery through operated systems', '運用システムまでのディスカバリー'),
-      paragraph:
-        'Structured phases—risk framing (リスクの枠組み), written contracts (契約・仕様の文書化), staged integration (段階的統合), and trace-driven iteration (トレース駆動の改善)—aligned with platform and security stakeholders.',
+    ctaDiscovery: 'Discovery',
+    ctaCapabilities: 'View capabilities',
+    studio: {
+      badge: 'STUDIO',
+      title: 'Product and platform engineering for AI-led operations',
+      description:
+        'Sohuji is a Japan-based practice shipping full-stack software, production LLM systems, and n8n-backed automation—with observability, contracts, and release discipline expected of core infrastructure.',
+      bullets: [
+        'Customer and internal web apps: performance, accessibility, and maintainable frontends aligned to your design system.',
+        'Agentic and RAG workloads with eval harnesses, tool schemas, and guardrails suited to support, GTM, and ops.',
+        'n8n at queue-aware scale—sub-workflows, error topology, credentials hygiene, and metrics that surface before users do.',
+      ],
+      closing:
+        'From greenfield portals to hardening existing graphs and model routes, we scope to measurable outcomes and ship with staging paths, rollback, and runbooks—not slideware.',
     },
-    operatingModel: {
-      badge: ja('OPERATING MODEL', '運用モデル'),
-      title: ja(
-        'Single thread: UX (ユーザー体験) ↔ integrations',
-        'UIから統合契約まで一つのスレッド'
-      ),
-      paragraph:
-        'One accountable squad ships operator UI (運用者向けUI) and the glue layer together—tighter feedback loops from first tool spec to a workflow your team runs daily.',
-      cta: ja('Discuss your stack', 'スタックを相談する'),
-    },
-    solutions: {
-      badge: ja('SOLUTIONS', 'ソリューション'),
-      title: ja(
-        'Production systems (本番システム), not experiments',
-        '実験ではなく本番システム'
-      ),
+    capabilitiesSection: {
+      badge: 'SCOPE OF WORK',
+      title: 'Capabilities',
+      description:
+        'Agentic AI, retrieval systems, MCP-style integrations, n8n orchestration, and operator-grade product surfaces—delivered as production systems, not experiments.',
       items: [
         {
-          title: ja('Agent review queue portal', 'エージェントレビューキュー'),
+          title: 'Agentic AI & copilots',
           description:
-            'Operator UI (運用者向けUI) for approvals (承認), annotations (注釈), and replay (リプレイ) on agentic workflows (エージェント型ワークフロー).',
+            'Production assistants with tool/function calling, structured outputs, and HITL checkpoints—grounded in your tickets, docs, and CRM data with offline evals and production telemetry.',
         },
         {
-          title: ja('RAG knowledge ops pipeline', 'RAGナレッジ運用'),
+          title: 'MCP-style integration fabric',
           description:
-            'Ingestion (取り込み), hybrid retrieval (ハイブリッド検索), citations (引用), and refresh jobs (更新ジョブ) for customer-facing support.',
+            'Typed tool surfaces and HTTP contracts that connect LLMs and workflows to warehouses, CRMs, support stacks, and internal APIs.',
+        },
+        {
+          title: 'n8n orchestration & AI nodes',
+          description:
+            'Graphs built for scale: sub-workflows, explicit error and DLQ branches, queue mode–friendly execution, streaming where UX needs it, and native AI Agent nodes.',
+        },
+        {
+          title: 'RAG & knowledge operations',
+          description:
+            'Ingestion pipelines, chunking and metadata design, hybrid and vector retrieval, refresh jobs, citations, scope limits, and redaction.',
+        },
+        {
+          title: 'Observability, evals & safety',
+          description:
+            'End-to-end traces, prompt and graph versioning, token and latency SLOs, PII handling, and audit-ready logs.',
+        },
+        {
+          title: 'Product surfaces & internal tooling',
+          description:
+            'Operator UIs on top of your automations: review queues, approvals, admin consoles, and customer portals.',
         },
       ],
+    },
+    principlesSection: {
+      badge: 'OPERATING MODEL',
+    },
+    deliverySection: {
+      badge: 'ENGAGEMENT LIFECYCLE',
+    },
+    faqSection: {
+      badge: 'REFERENCE',
+      title: 'FAQ: production patterns',
+      hint: 'Tap a question to expand. For architecture reviews or procurement packets, use the contact section.',
     },
     engagement: {
-      badge: ja('GET STARTED', 'はじめる'),
-      title: ja(
-        'Engagements mapped to measurable outcomes, not slideware',
-        'スライドではなく測定可能な成果に紐づく'
-      ),
+      badge: 'GET STARTED',
+      title: 'Engagements mapped to measurable outcomes, not slideware',
       phases: [
         {
-          title: ja('Discovery', 'ディスカバリー'),
+          title: 'Discovery',
           features: [
-            ja('Outcome alignment', '成果の整合'),
-            ja('Data class review', 'データ分類レビュー'),
-            ja('Risk framing', 'リスクの枠組み'),
-            ja('Architecture sketch', 'アーキテクチャ概要'),
+            'Outcome alignment',
+            'Data class review',
+            'Risk framing',
+            'Architecture sketch',
           ],
         },
         {
-          title: ja('Build & Integrate', '構築・統合'),
+          title: 'Build & Integrate',
           features: [
-            ja('UIs & model routes', 'UIとモデルルート'),
-            ja('n8n graphs & connectors', 'n8nグラフとコネクタ'),
-            ja('Feature-flagged staging', 'フィーチャーフラグ付きステージング'),
-            ja('Rollback paths', 'ロールバック経路'),
+            'UIs & model routes',
+            'n8n graphs & connectors',
+            'Feature-flagged staging',
+            'Rollback paths',
           ],
         },
         {
-          title: ja('Operate & Iterate', '運用・改善'),
+          title: 'Operate & Iterate',
           features: [
-            ja('Dashboards & alerts', 'ダッシュボードとアラート'),
-            ja('Eval-driven improvements', '評価駆動の改善'),
-            ja('Trace correlation', 'トレース相関'),
-            ja('Runbook handoff', '運用手順書の引き渡し'),
+            'Dashboards & alerts',
+            'Eval-driven improvements',
+            'Trace correlation',
+            'Runbook handoff',
           ],
         },
       ],
     },
-    reference: {
-      badge: ja('REFERENCE', '参考'),
-      title: ja(
-        'Production bar for AI, workflows, and product',
-        'AI・ワークフロー・プロダクトの本番基準'
-      ),
-    },
   },
-  about: {
-    badge: ja('ABOUT', '概要'),
-    title: ja(
-      'Product and platform engineering (プラットフォームエンジニアリング) for AI-led operations',
-      'AI主導の運用のためのプロダクト・プラットフォームエンジニアリング'
-    ),
+  principles: {
+    badge: 'PRINCIPLES',
+    title: 'Production bar for AI, workflows, and product',
     description:
-      'Sohuji (ソウフジ) is a Japan-based practice shipping full-stack software, production LLM (大規模言語モデル) systems, and n8n-backed automation (自動化)—with observability (可観測性), contracts (契約・インターフェース定義), and release discipline (リリース規律) expected of core infrastructure.',
-    principles: {
-      badge: ja('PRINCIPLES', '原則'),
-      title:
-        'SLO (サービスレベル目標)-minded delivery with KPI (重要業績評価指標)-linked scope and failure-mode–aware automation (障害モードを意識した自動化)',
-    },
-    capabilities: {
-      badge: ja('CAPABILITIES', '機能'),
-      title:
-        'Agentic AI (エージェント型AI), retrieval systems (検索システム), MCP-style integrations (MCP型統合), and operator-grade product surfaces (運用者向けプロダクト)',
-    },
+      'SLO-minded delivery: KPI-linked scope, failure-mode–aware automation, traceable model and graph changes, and one squad accountable from UI through integration contracts.',
+    items: [
+      {
+        title: 'KPI-anchored scope',
+        description:
+          'Engagements map to metrics you already instrument—MTTR, lead velocity, cost-to-serve, cycle time—so agent and n8n work is justified by production signals, not narrative alone.',
+      },
+      {
+        title: '2026-shaped systems design',
+        description:
+          'RAG with eval harnesses, MCP-style tools, queue-aware n8n, and versioned prompts/graphs: architectures your platform org can trace, diff, and operate under real concurrency and failure modes.',
+      },
+      {
+        title: 'Failure-mode–first automation',
+        description:
+          'Idempotency keys, bounded retries, poison-message handling, and crisp boundaries between orchestration, domain services, and persistence—so graphs degrade predictably when load and edge cases spike.',
+      },
+      {
+        title: 'Single thread: UX ↔ integrations',
+        description:
+          'One accountable squad ships operator UI and the glue layer together—tighter feedback loops from first tool spec to a workflow your team runs daily without ping-pong across vendors.',
+      },
+    ],
   },
   capabilities: {
     badge: ja('CAPABILITIES', '機能'),
@@ -291,8 +302,56 @@ export const sohujiCopy = {
   },
   callout: {
     title:
-      'Harden your AI and automation footprint (AI・自動化の本番耐性)—with evals (評価), tracing (トレース), and release hygiene (リリース衛生) your platform org expects.',
-    ctaDiscovery: ja('Book technical discovery', '技術ディスカバリー'),
-    ctaFaq: ja('View FAQ', 'FAQを見る'),
+      'Harden your AI and automation footprint—with evals, tracing, and release hygiene your platform org expects.',
+    ctaDiscovery: 'Discuss your stack',
+    ctaFaq: 'View FAQ',
+  },
+  solutions: {
+    badge: 'SOLUTIONS',
+    title: 'Production systems for agentic AI, retrieval, and workflow automation',
+    description:
+      'Solution lanes mapped to how teams buy and operate AI-led software—from product engineering through agentic workloads and workflow ops.',
+    lanes: [
+      {
+        title: 'Web & product engineering',
+        description:
+          'Customer and internal web apps with performance, accessibility, and maintainable frontends aligned to your design system.',
+        href: '/service/detail',
+      },
+      {
+        title: 'Agentic AI & RAG',
+        description:
+          'Production assistants, retrieval pipelines, eval harnesses, tool schemas, and operator-grade copilots grounded in your data.',
+        href: '/service/detail',
+      },
+      {
+        title: 'n8n & workflow ops',
+        description:
+          'Queue-aware orchestration, sub-workflows, DLQ paths, credentials hygiene, and AI Agent nodes at production scale.',
+        href: '/service/detail',
+      },
+    ],
+    caseStudies: [
+      {
+        title: 'Agent review queue portal',
+        description:
+          'Operator UI for approvals, annotations, and replay on agentic workflows.',
+      },
+      {
+        title: 'RAG knowledge ops pipeline',
+        description:
+          'Ingestion, hybrid retrieval, citations, and refresh jobs for support.',
+      },
+      {
+        title: 'MCP integration fabric',
+        description:
+          'Typed tool surfaces connecting LLMs to CRM, tickets, and internal APIs.',
+      },
+      {
+        title: 'Queue-aware n8n operations',
+        description:
+          'Sub-workflows, DLQ branches, and AI Agent nodes at production scale.',
+      },
+    ],
   },
 }

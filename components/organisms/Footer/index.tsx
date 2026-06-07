@@ -52,8 +52,10 @@ const Footer = () => {
             <div className="space-y-5">
               <Text value={ja('COMPANY', '会社')} textStyle="FooterLinkGroupTitle" />
               <div className="space-y-[10px]">
-                <NavLink value={nav.about} href="/about" />
-                <NavLink value={ja('Contact', 'お問い合わせ')} href="/contact" />
+                <NavLink value={nav.principles} href="/principles" />
+                <NavLink value={nav.delivery} href="/how-we-work" />
+                <NavLink value={nav.contact} href="/contact" />
+                <NavLink value={nav.solutions} href="/solutions" />
                 <NavLink value={nav.discovery} href="/quote" />
                 <NavLink value={ja('Privacy Policy', 'プライバシーポリシー')} href="/privacy-policy" />
                 <NavLink value={ja('Term of Service', '利用規約')} href="/term-of-service" />

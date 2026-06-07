@@ -13,7 +13,7 @@ const CallOut = () => {
           <SectionSentence title={sohujiCopy.callout.title} />
         </div>
         <div className="flex flex-col gap-5 w-full sm:w-fit sm:flex-row lg:w-full lg:justify-end">
-          <ButtonLink value={sohujiCopy.callout.ctaDiscovery} href="/quote" />
+          <ButtonLink value={sohujiCopy.callout.ctaDiscovery} href="/contact" />
           <ButtonLink value={sohujiCopy.callout.ctaFaq} color="white" style="light" href="/faq" />
         </div>
       </section>
