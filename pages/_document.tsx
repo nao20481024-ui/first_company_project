@@ -1,6 +1,7 @@
 import { Head, Html, Main, NextScript } from 'next/document'
 import { sohujiCopy } from 'constants/sohujiCopy'
 import React from 'react'
+
 const Document = () => {
   return (
     <Html lang="en">
@@ -8,11 +9,9 @@ const Document = () => {
           <meta name="description" content={sohujiCopy.meta.description} />
           <meta name="robots" content="index, follow" />
           <meta name='tags' content='ai,llm,agentic,rag,n8n,automation,mcp,observability,software,sohuji' />
-        <link
-          rel="shortcut icon"
-          href="/images/favicon.svg"
-          type="image/x-icon"
-        />
+        <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/images/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/images/icon.svg" />
       </Head>
         <body>
             <Main />
