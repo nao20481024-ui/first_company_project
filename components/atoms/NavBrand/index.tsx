@@ -18,7 +18,7 @@ const NavBrand = () => {
               src={'/images/brand.svg'}
               width={240}
               height={52}
-              alt="Sohuji (ソウフジ)"
+              alt="Sohuji"
               className="h-12 sm:h-14 w-auto"
               loading="lazy"
             />

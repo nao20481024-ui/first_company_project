@@ -16,11 +16,11 @@ export const sohujiCopy = {
       'Sohuji (ソウフジ) — production LLM (本番向けLLM), agentic AI (エージェント型AI), RAG (検索拡張生成), n8n automation (自動化), and operator UIs (運用者向けUI) with observability (可観測性) and release discipline (リリース規律).',
   },
   nav: {
-    capabilities: ja('Capabilities', '機能'),
-    delivery: ja('Delivery', 'デリバリー'),
-    solutions: ja('Solutions', 'ソリューション'),
-    about: ja('About', '概要'),
-    discovery: ja('Discovery', '技術ディスカバリー'),
+    capabilities: 'Capabilities',
+    delivery: 'Delivery',
+    solutions: 'Solutions',
+    about: 'About',
+    discovery: 'Discovery',
   },
   home: {
     badge: 'LLM (大規模言語モデル) · AGENTS (エージェント) · EVALS (評価)',
