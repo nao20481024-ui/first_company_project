@@ -38,7 +38,7 @@ const Solutions = () => {
             >
               <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                 <SectionSentence title={lane.title} paragraph={lane.description} />
-                <TextArrowLink label="Learn more" href={lane.href} />
+                <TextArrowLink label={solutions.learnMore} href={lane.href} />
               </div>
             </div>
           ))}
@@ -53,12 +53,12 @@ const Solutions = () => {
           data-aos="zoom-in-up"
         >
           <SectionSentence
-            badge="CASE STUDIES"
-            title="Production systems, not experiments"
+            badge={solutions.caseStudies.badge}
+            title={solutions.caseStudies.title}
           />
         </div>
         <div className="w-full grid grid-cols-1 gap-y-16 sm:grid-cols-2 sm:gap-x-5">
-          {solutions.caseStudies.map((project) => (
+          {solutions.caseStudyItems.map((project) => (
             <div key={project.title} data-aos="zoom-in-up">
               <ProjectCard title={project.title} description={project.description} />
             </div>
@@ -67,7 +67,7 @@ const Solutions = () => {
       </section>
 
       <section className="flex justify-center pt-8" data-aos="fade-up">
-        <ButtonLink value="Book technical discovery" href="/quote" />
+        <ButtonLink value={solutions.ctaDiscovery} href="/quote" />
       </section>
     </PageTemplate>
   )

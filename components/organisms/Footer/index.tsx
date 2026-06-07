@@ -12,7 +12,7 @@ const Footer = () => {
       <footer className="mt-32 pb-16">
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-16 xl:gap-20">
           <div className="space-y-5">
-            <NavBrand />
+            <NavBrand variant="footer" />
             <div className="max-w-sm">
               <Text value={brand.tagline} textStyle="SectionParagraph" />
               <Text value={brand.footerLine} textStyle="SectionParagraph" />

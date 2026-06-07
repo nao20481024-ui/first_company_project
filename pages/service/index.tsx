@@ -1,3 +1,4 @@
+import FeatureCard from 'components/molecules/Card/FeatureCard'
 import React from 'react'
 import PageTemplate from 'components/templates/PageTemplate'
 import PageSentence from 'components/molecules/PageSentence'
@@ -18,7 +19,16 @@ import TextArrowLink from 'components/molecules/TextArrowLink'
 import IconListItem from 'components/molecules/IconListItem'
 import { ja, sohujiCopy } from 'constants/sohujiCopy'
 
-const { capabilities, brand } = sohujiCopy
+const { capabilities, brand, home } = sohujiCopy
+
+const capabilityIcons = [
+  <FiCpu key="agentic" />,
+  <FiDatabase key="rag" />,
+  <FiGitBranch key="n8n" />,
+  <FiLayers key="mcp" />,
+  <FiActivity key="obs" />,
+  <FiShield key="product" />,
+]
 
 const Services = () => {
   return (
@@ -31,6 +41,20 @@ const Services = () => {
               title={capabilities.title}
               description={capabilities.description}
             />
+          </div>
+        </section>
+        <LineDivider />
+        <section className="flex flex-col gap-16 items-center">
+          <div className="w-full grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {home.capabilitiesSection.items.map((item, index) => (
+              <div key={item.title} data-aos="fade-up">
+                <FeatureCard
+                  title={item.title}
+                  description={item.description}
+                  icon={capabilityIcons[index]}
+                />
+              </div>
+            ))}
           </div>
         </section>
         <LineDivider />

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="52" viewBox="0 0 240 52" fill="none" aria-label="Sohuji">
-  <g transform="translate(0 2) scale(0.72)">
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="72" viewBox="0 0 320 72" fill="none" aria-label="Sohuji">
+  <g transform="translate(2 2) scale(1.28)">
     <circle cx="32" cy="32" r="26" stroke="#10b981" stroke-width="3" />
     <path d="M32 12L32 18" stroke="#10b981" stroke-width="3" stroke-linecap="round" />
     <circle cx="32" cy="18" r="4" fill="none" stroke="#10b981" stroke-width="3" />
@@ -16,5 +16,5 @@
     <path d="M32 42L40 50" stroke="#10b981" stroke-width="3" stroke-linecap="round" />
     <path d="M24 50L40 50" stroke="#10b981" stroke-width="3" stroke-linecap="round" />
   </g>
-  <text x="56" y="32" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600">Sohuji</text>
+  <text x="88" y="42" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Sohuji</text>
 </svg>

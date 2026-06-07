@@ -84,9 +84,9 @@ const NavBar = () => {
 
               browserName == 'Firefox' ? 'bg-gray-900' : 'bg-light'
 
-            } px-6 py-4 w-full rounded-md backdrop-blur-3xl ${
+            } px-10 md:px-14 py-4 w-full rounded-md backdrop-blur-3xl ${
 
-              isScrolled || isOpen ? '' : 'lg:bg-transparent lg:px-0'
+              isScrolled || isOpen ? '' : 'lg:bg-transparent lg:px-10 xl:px-12'
 
             }`}
 
