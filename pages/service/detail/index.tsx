@@ -100,9 +100,10 @@ const ServiceDetail = () => {
         <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full" data-aos="fade-up-right">
           <figure className="w-full h-[450px] relative">
             <Image
-              src={'/images/development-illustration.svg'}
-              layout="fill"
-              objectFit="fill"
+              src="/images/development-illustration.svg"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-fill"
               alt="Production AI and workflow architecture"
             />
           </figure>

@@ -67,8 +67,9 @@ const Home = () => {
         <aside className="w-full h-[400px] relative" data-aos="fade-right">
           <Image
             src="/images/about-illustration.webp"
-            layout="fill"
-            objectFit="contain"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-contain"
             alt="Product and platform engineering"
           />
         </aside>

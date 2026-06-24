@@ -62,9 +62,10 @@ const Services = () => {
           <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full" data-aos="fade-up-right">
             <figure className="w-full h-[315px] relative">
               <Image
-                src={'/images/ui-design-illustration.svg'}
-                layout="fill"
-                objectFit="fill"
+                src="/images/ui-design-illustration.svg"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-fill"
                 alt="Agentic AI systems"
               />
             </figure>
@@ -130,9 +131,10 @@ const Services = () => {
           <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full" data-aos="fade-up-left">
             <figure className="w-full h-[450px] relative">
               <Image
-                src={'/images/development-illustration.svg'}
-                layout="fill"
-                objectFit="fill"
+                src="/images/development-illustration.svg"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-fill"
                 alt="Integration and retrieval architecture"
               />
             </figure>
@@ -142,9 +144,10 @@ const Services = () => {
           <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full" data-aos="fade-up-right">
             <figure className="w-full h-[545px] relative">
               <Image
-                src={'/images/maintenance-illustration.svg'}
-                layout="fill"
-                objectFit="fill"
+                src="/images/maintenance-illustration.svg"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-fill"
                 alt="n8n workflow operations"
               />
             </figure>

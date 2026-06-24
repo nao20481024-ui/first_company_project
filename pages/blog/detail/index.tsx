@@ -107,8 +107,7 @@ const BlogDetail = () => {
             width={thumbnailSize.width}
             height={thumbnailSize.height}
             quality={85}
-            objectFit="cover"
-            className="rounded-xl"
+            className="rounded-xl object-cover"
             alt="figma"
           />
         </div>
@@ -144,8 +143,7 @@ const BlogDetail = () => {
             width={forestImageSize.width}
             height={forestImageSize.height}
             quality={80}
-            objectFit="cover"
-            className="rounded-xl"
+            className="rounded-xl object-cover"
             alt="forest"
           />
         </div>

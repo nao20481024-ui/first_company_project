@@ -13,7 +13,7 @@ const BlogAuthorCard = ({ avatarSrc, bio, job, name }: BlogAuthorCardProps) => {
     <div className="w-full rounded-md bg-light p-6 flex flex-col gap-5 md:flex-row lg:gap-10">
       <div className="">
         <div className="relative w-[100px] h-[100px]">
-          <Image src={avatarSrc} layout="fill" objectFit="cover" alt='Author Avatar' />
+          <Image src={avatarSrc} fill sizes="100px" className="object-cover" alt="Author Avatar" />
         </div>
       </div>
       <div className="space-y-6">

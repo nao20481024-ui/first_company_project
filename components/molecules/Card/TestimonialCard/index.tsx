@@ -17,7 +17,7 @@ const TestimonialCard = ({ avatarSrc, company, name, testimony }: Props) => {
             src={avatarSrc}
             width={100}
             height={100}
-            objectFit="contain"
+            className="object-contain"
             alt="avatar"
           />
           <div className="absolute bottom-0 right-0">
