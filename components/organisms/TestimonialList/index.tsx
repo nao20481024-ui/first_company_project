@@ -42,7 +42,7 @@ const TestimonialList = () => {
             avatarSrc="/images/testimonial-avatar.png"
             name="Platform Lead"
             company="Enterprise SaaS"
-            testimony={`"Sohuji shipped our agent review queue with eval gates and trace correlation—we finally measure model behavior under real traffic instead of guessing from demos."`}
+            testimony={`"Tokyoai shipped our agent review queue with eval gates and trace correlation—we finally measure model behavior under real traffic instead of guessing from demos."`}
           />
         </SwiperSlide>
         <SwiperSlide className='mt-10'>

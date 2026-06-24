@@ -3,7 +3,7 @@ import Text from 'components/atoms/Text'
 import PricingCard from 'components/molecules/Card/PricingCard'
 import PageSentence from 'components/molecules/PageSentence'
 import PageTemplate from 'components/templates/PageTemplate'
-import { ja, sohujiCopy } from 'constants/sohujiCopy'
+import { sohujiCopy } from 'constants/sohujiCopy'
 import Link from 'next/link'
 import React from 'react'
 import randomString from 'utils/randomString'
@@ -12,7 +12,7 @@ const { home, faq, brand } = sohujiCopy
 
 const Pricing = () => {
   return (
-    <PageTemplate title={`${ja('Engagement', 'エンゲージメント')} - ${brand.name}`}>
+    <PageTemplate title={`Engagement - ${brand.name}`}>
       <section className="grid grid-cols-1 place-items-center">
         <div
           className="sm:w-10/12 md:8/12 lg:w-6/12 text-center"
@@ -20,10 +20,7 @@ const Pricing = () => {
         >
           <PageSentence
             badge={home.engagement.badge}
-            title={ja(
-              'Discovery through operated systems—scoped to measurable outcomes',
-              '運用システムまでのディスカバリー—測定可能な成果にスコープ'
-            )}
+            title="Discovery through operated systems—scoped to measurable outcomes"
           />
         </div>
       </section>
@@ -32,7 +29,7 @@ const Pricing = () => {
         {home.engagement.phases.map((phase) => (
           <div key={phase.title} data-aos="fade-up">
             <PricingCard
-              price={ja('Scoped', 'スコープ見積')}
+              price="Scoped"
               title={phase.title}
               features={phase.features}
             />
@@ -54,11 +51,11 @@ const Pricing = () => {
           })}
         </div>
         <div className="text-white text-base font-medium text-center">
-          {ja("Didn't find an answer?", '回答が見つかりませんか？')}{' '}
+          {"Didn't find an answer?"}{' '}
           <div className="sm:hidden"></div>
           <div className="text-primary inline select-none">
             <Link href={'/contact'}>
-              {ja('Book a technical discovery session.', '技術ディスカバリーを予約する。')}
+              Contact our team for a consultation.
             </Link>
           </div>
         </div>

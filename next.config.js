@@ -11,7 +11,12 @@ const nextConfig = {
   async redirects() {
     return [
       { source: '/about', destination: '/principles', permanent: true },
-      { source: '/project', destination: '/solutions', permanent: true },
+      { source: '/project', destination: '/capabilities', permanent: true },
+      { source: '/solutions', destination: '/capabilities', permanent: true },
+      { source: '/quote', destination: '/contact', permanent: true },
+      { source: '/service', destination: '/capabilities', permanent: true },
+      { source: '/service/detail', destination: '/capabilities/detail', permanent: true },
+      { source: '/how-we-work', destination: '/delivery', permanent: true },
     ]
   },
 }

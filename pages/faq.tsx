@@ -3,7 +3,7 @@ import FaqTabbar from 'components/molecules/FaqTabbar'
 import PageSentence from 'components/molecules/PageSentence'
 import FaqList from 'components/organisms/FaqList'
 import PageTemplate from 'components/templates/PageTemplate'
-import { ja, sohujiCopy } from 'constants/sohujiCopy'
+import { sohujiCopy } from 'constants/sohujiCopy'
 import React, { useEffect, useState } from 'react'
 import getRandomItemsFromArray from 'utils/getRandomItemsFromArray'
 
@@ -37,19 +37,19 @@ const Faq = () => {
           <FaqTabbar
             tabs={[
               {
-                name: ja('Production', '本番'),
+                name: 'Production',
                 onClick: () => setActiveFaq(randomFaqs[0]),
               },
               {
-                name: ja('Agents', 'エージェント'),
+                name: 'Agents',
                 onClick: () => setActiveFaq(randomFaqs[1]),
               },
               {
-                name: 'n8n',
+                name: 'Workflows',
                 onClick: () => setActiveFaq(randomFaqs[2]),
               },
               {
-                name: ja('Security', 'セキュリティ'),
+                name: 'Security',
                 onClick: () => setActiveFaq(randomFaqs[3]),
               },
             ]}

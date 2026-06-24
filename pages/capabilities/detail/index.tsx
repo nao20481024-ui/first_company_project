@@ -18,7 +18,7 @@ import {
 } from 'react-icons/fi'
 import randomString from 'utils/randomString'
 
-const ServiceDetail = () => {
+const CapabilityDetail = () => {
   interface Faq {
     title: string
     description: string
@@ -85,9 +85,9 @@ const ServiceDetail = () => {
     },
   ]
   return (
-    <PageTemplate title="Capabilities - Sohuji">
+    <PageTemplate title="Capabilities - Tokyoai">
       <section className="grid place-items-center">
-        <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center" data-aos="zoom-in-up">
+        <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center">
           <PageSentence
             badge="CAPABILITIES"
             title="Harden your AI and automation footprint for production traffic"
@@ -97,7 +97,7 @@ const ServiceDetail = () => {
       </section>
       <LineDivider />
       <section className="grid grid-cols-1 place-items-center gap-8 lg:grid-cols-2 lg:gap-5 ">
-        <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full" data-aos="fade-up-right">
+        <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full">
           <figure className="w-full h-[450px] relative">
             <Image
               src="/images/development-illustration.svg"
@@ -108,7 +108,7 @@ const ServiceDetail = () => {
             />
           </figure>
         </aside>
-        <aside className="grid gap-12 place-items-center" data-aos="fade-up-left">
+        <aside className="grid gap-12 place-items-center">
           <div className="sm:w-10/12 md:w-8/12 lg:w-full lg:text-left grid gap-10">
             <div className="grid gap-8">
               <Text
@@ -127,7 +127,7 @@ const ServiceDetail = () => {
         </aside>
       </section>
       <section className="grid place-items-center gap-16">
-        <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center" data-aos="zoom-in-up">
+        <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center">
           <PageSentence
             badge="DELIVERY"
             title="Production patterns we standardize across engagements"
@@ -136,7 +136,7 @@ const ServiceDetail = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((feature) => {
             return (
-              <div key={randomString(64)} data-aos="fade-up">
+              <div key={randomString(64)}>
                 <FeatureCard
                   title={feature.title}
                   description={feature.description}
@@ -149,7 +149,7 @@ const ServiceDetail = () => {
         </div>
       </section>
       <section className="grid place-items-center gap-16">
-        <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center" data-aos="zoom-in-up">
+        <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center">
           <PageSentence
             badge="FAQ"
             title="Production patterns: RAG, agents, n8n, observability, and operator software"
@@ -158,7 +158,7 @@ const ServiceDetail = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-x-7">
           {faqs.map((faq) => {
             return (
-              <div className="grid gap-2.5" key={randomString(64)} data-aos="fade-right">
+              <div className="grid gap-2.5" key={randomString(64)}>
                 <Text textStyle="FAQTitle" value={faq.title} />
                 <Text textStyle="FAQDescription" value={faq.description} />
               </div>
@@ -177,4 +177,4 @@ const ServiceDetail = () => {
   )
 }
 
-export default ServiceDetail
+export default CapabilityDetail

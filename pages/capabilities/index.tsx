@@ -17,7 +17,7 @@ import SmallCardIcon from 'components/molecules/Card/SmallCardIcon'
 import CardListIcon from 'components/molecules/Card/CardListIcon'
 import TextArrowLink from 'components/molecules/TextArrowLink'
 import IconListItem from 'components/molecules/IconListItem'
-import { ja, sohujiCopy } from 'constants/sohujiCopy'
+import { sohujiCopy } from 'constants/sohujiCopy'
 
 const { capabilities, brand, home } = sohujiCopy
 
@@ -30,11 +30,11 @@ const capabilityIcons = [
   <FiShield key="product" />,
 ]
 
-const Services = () => {
+const Capabilities = () => {
   return (
     <>
       <PageTemplate title={`${capabilities.badge} - ${brand.name}`}>
-        <section className="grid place-items-center" data-aos="zoom-in-up">
+        <section className="grid place-items-center">
           <div className="text-center sm:w-10/12 md:w-8/12 lg:w-6/12">
             <PageSentence
               badge={capabilities.badge}
@@ -47,7 +47,7 @@ const Services = () => {
         <section className="flex flex-col gap-16 items-center">
           <div className="w-full grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {home.capabilitiesSection.items.map((item, index) => (
-              <div key={item.title} data-aos="fade-up">
+              <div key={item.title}>
                 <FeatureCard
                   title={item.title}
                   description={item.description}
@@ -59,7 +59,7 @@ const Services = () => {
         </section>
         <LineDivider />
         <section className="grid grid-cols-1 place-items-center gap-8 lg:grid-cols-2 lg:gap-5 ">
-          <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full" data-aos="fade-up-right">
+          <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full">
             <figure className="w-full h-[315px] relative">
               <Image
                 src="/images/ui-design-illustration.svg"
@@ -70,7 +70,7 @@ const Services = () => {
               />
             </figure>
           </aside>
-          <aside className="grid gap-12 place-items-center" data-aos="fade-up-left">
+          <aside className="grid gap-12 place-items-center">
             <div className="sm:w-10/12 md:w-8/12 lg:w-full text-center lg:text-left">
               <SectionSentence
                 badge={capabilities.agentic.badge}
@@ -81,28 +81,22 @@ const Services = () => {
             <div className="grid gap-6 w-full place-items-end md:w-8/12 lg:w-full">
               <aside className="w-full grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <SmallCardIcon
-                  title={ja('Tool schemas', 'ツールスキーマ')}
-                  description={ja(
-                    'Typed function calling with guardrails for support, GTM, and ops.',
-                    'サポート・GTM・運用向けガードレール付き関数呼び出し'
-                  )}
+                  title="Tool schemas"
+                  description="Typed function calling with guardrails for support, GTM, and ops."
                   icon={<FiCpu />}
                 />
                 <SmallCardIcon
-                  title={ja('Eval harnesses', '評価ハーネス')}
-                  description={ja(
-                    'Offline eval sets and refusal tracking before customer-facing rollout.',
-                    '顧客向けロールアウト前のオフライン評価と拒否率追跡'
-                  )}
+                  title="Eval harnesses"
+                  description="Offline eval sets and refusal tracking before customer-facing rollout."
                   icon={<FiActivity />}
                 />
               </aside>
-              <TextArrowLink label={ja('Capability detail', '機能詳細')} href="/service/detail" />
+              <TextArrowLink label="Capability detail" href="/capabilities/detail" />
             </div>
           </aside>
         </section>
         <section className="grid grid-cols-1 place-items-center gap-8 lg:grid-cols-2 lg:gap-5 ">
-          <aside className="grid gap-12 place-items-center" data-aos="fade-up-right">
+          <aside className="grid gap-12 place-items-center">
             <div className="sm:w-10/12 md:w-8/12 lg:w-full text-center lg:text-left">
               <SectionSentence
                 badge={capabilities.ragMcp.badge}
@@ -114,21 +108,21 @@ const Services = () => {
               <aside className="w-full grid grid-cols-1 gap-5">
                 <CardListIcon
                   icon={<FiDatabase />}
-                  title={ja('RAG & knowledge operations', 'RAGとナレッジ運用')}
+                  title="RAG & knowledge operations"
                 />
                 <CardListIcon
                   icon={<FiLayers />}
-                  title={ja('MCP-style tool surfaces', 'MCP型ツール面')}
+                  title="Integration tool surfaces"
                 />
                 <CardListIcon
                   icon={<FiShield />}
-                  title={ja('Least-privilege access', '最小権限アクセス')}
+                  title="Least-privilege access"
                 />
               </aside>
-              <TextArrowLink label={ja('Capability detail', '機能詳細')} href="/service/detail" />
+              <TextArrowLink label="Capability detail" href="/capabilities/detail" />
             </div>
           </aside>
-          <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full" data-aos="fade-up-left">
+          <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full">
             <figure className="w-full h-[450px] relative">
               <Image
                 src="/images/development-illustration.svg"
@@ -141,18 +135,18 @@ const Services = () => {
           </aside>
         </section>
         <section className="grid grid-cols-1 place-items-center gap-8 lg:grid-cols-2 lg:gap-5 ">
-          <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full" data-aos="fade-up-right">
+          <aside className="w-full sm:w-10/12 md:w-8/12 lg:w-full">
             <figure className="w-full h-[545px] relative">
               <Image
                 src="/images/maintenance-illustration.svg"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-fill"
-                alt="n8n workflow operations"
+                alt="Workflow operations"
               />
             </figure>
           </aside>
-          <aside className="grid gap-12 place-items-center" data-aos="fade-up-left">
+          <aside className="grid gap-12 place-items-center">
             <div className="sm:w-10/12 md:w-8/12 lg:w-full text-center lg:text-left">
               <SectionSentence
                 badge={capabilities.n8nObs.badge}
@@ -164,22 +158,22 @@ const Services = () => {
               <aside className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
                 <IconListItem
                   icon={<FiGitBranch />}
-                  value={ja('Sub-workflows & DLQ paths', 'サブワークフローとDLQ')}
+                  value="Sub-workflows & dead-letter paths"
                 />
                 <IconListItem
                   icon={<FiActivity />}
-                  value={ja('Token & latency SLOs', 'トークン・レイテンシSLO')}
+                  value="Token & latency SLOs"
                 />
                 <IconListItem
                   icon={<FiCpu />}
-                  value={ja('Native AI Agent nodes', 'ネイティブAI Agentノード')}
+                  value="Native AI agent nodes"
                 />
                 <IconListItem
                   icon={<FiShield />}
-                  value={ja('Audit-ready logs', '監査対応ログ')}
+                  value="Audit-ready logs"
                 />
               </aside>
-              <TextArrowLink label={ja('Capability detail', '機能詳細')} href="/service/detail" />
+              <TextArrowLink label="Capability detail" href="/capabilities/detail" />
             </div>
           </aside>
         </section>
@@ -188,4 +182,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default Capabilities

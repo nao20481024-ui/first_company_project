@@ -5,10 +5,8 @@ import FeatureCard from 'components/molecules/Card/FeatureCard'
 import PageSentence from 'components/molecules/PageSentence'
 import SectionSentence from 'components/molecules/SectionSentence'
 import FaqList from 'components/organisms/FaqList'
-import LogoList from 'components/organisms/LogoList'
 import PageTemplate from 'components/templates/PageTemplate'
 import { sohujiCopy } from 'constants/sohujiCopy'
-import Image from 'next/image'
 import React from 'react'
 import {
   FiActivity,
@@ -42,7 +40,10 @@ const principleIcons = [
 const Home = () => {
   return (
     <PageTemplate title={`Home - ${sohujiCopy.brand.name}`}>
-      <section className="flex flex-col gap-10 items-center" data-aos="fade-up">
+      <section
+        className="flex flex-col gap-10 items-center justify-center min-h-[calc(100vh-105px)]"
+        data-aos="fade-up"
+      >
         <div className="w-10/12 md:w-8/12 text-center">
           <PageSentence
             title={home.title}
@@ -51,47 +52,35 @@ const Home = () => {
           />
         </div>
         <div className="flex flex-col gap-6 sm:flex-row w-full sm:w-fit">
-          <ButtonLink value={home.ctaDiscovery} href="/quote" />
+          <ButtonLink value={home.ctaContact} href="/contact" />
           <ButtonLink
             value={home.ctaCapabilities}
             color="white"
             style="light"
-            href="/service"
+            href="/capabilities"
           />
         </div>
       </section>
 
-      <LogoList />
+      <LineDivider />
 
-      <section className="grid grid-cols-1 gap-8 place-items-center lg:grid-cols-2">
-        <aside className="w-full h-[400px] relative" data-aos="fade-right">
-          <Image
-            src="/images/about-illustration.webp"
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-contain"
-            alt="Product and platform engineering"
-          />
-        </aside>
-        <aside
-          className="text-center sm:w-10/12 lg:text-left lg:w-full space-y-6"
-          data-aos="fade-left"
-        >
+      <section className="flex flex-col gap-8 items-center max-w-3xl mx-auto text-center lg:text-left lg:max-w-none lg:items-start">
+        <div data-aos="fade-up">
           <SectionSentence
             badge={home.studio.badge}
             title={home.studio.title}
             paragraph={home.studio.description}
           />
-          <ul className="space-y-3 text-left">
-            {home.studio.bullets.map((bullet) => (
-              <li key={bullet} className="flex gap-3">
-                <span className="text-emerald-400 mt-1">•</span>
-                <Text value={bullet} textStyle="SectionParagraph" />
-              </li>
-            ))}
-          </ul>
-          <Text value={home.studio.closing} textStyle="SectionParagraph" />
-        </aside>
+        </div>
+        <ul className="space-y-3 text-left w-full" data-aos="fade-up">
+          {home.studio.bullets.map((bullet) => (
+            <li key={bullet} className="flex gap-3">
+              <span className="text-emerald-400 mt-1">•</span>
+              <Text value={bullet} textStyle="SectionParagraph" />
+            </li>
+          ))}
+        </ul>
+        <Text value={home.studio.closing} textStyle="SectionParagraph" />
       </section>
 
       <LineDivider />
@@ -120,7 +109,7 @@ const Home = () => {
         </div>
         <ButtonLink
           value="View capabilities"
-          href="/service"
+          href="/capabilities"
           color="white"
           style="light"
           size="small"
@@ -186,7 +175,7 @@ const Home = () => {
         </div>
         <ButtonLink
           value="View delivery"
-          href="/how-we-work"
+          href="/delivery"
           color="white"
           style="light"
           size="small"

@@ -1,4 +1,4 @@
-# Sohuji (ソウフジ)
+# Tokyoai
 
 Production-oriented software: agentic AI (エージェント型AI), retrieval (検索) and tool contracts (ツール契約), n8n orchestration (オーケストレーション), and operator interfaces (運用者向けUI)—shipped with observability (可観測性) and release discipline (リリース規律).
 

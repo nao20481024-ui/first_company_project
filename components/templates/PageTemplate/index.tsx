@@ -16,7 +16,7 @@ interface PageTemplateProps {
   title?: string
 }
 
-const PageTemplate = ({ children, title = 'Sohuji' }: PageTemplateProps) => {
+const PageTemplate = ({ children, title = 'Tokyoai' }: PageTemplateProps) => {
   return (
     <>
       <Head>

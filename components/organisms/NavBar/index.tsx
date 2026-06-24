@@ -79,17 +79,13 @@ const NavBar = () => {
         <Container>
 
           <div
-
             className={`${
-
-              browserName == 'Firefox' ? 'bg-gray-900' : 'bg-light'
-
-            } px-10 md:px-14 py-4 w-full rounded-md backdrop-blur-3xl ${
-
-              isScrolled || isOpen ? '' : 'lg:bg-transparent lg:px-10 xl:px-12'
-
+              browserName == 'Firefox' ? 'bg-gray-900/80' : 'bg-light'
+            } px-10 md:px-14 py-4 w-full rounded-md ${
+              isScrolled || isOpen
+                ? 'backdrop-blur-md'
+                : 'backdrop-blur-sm lg:backdrop-blur-none lg:bg-transparent lg:px-10 xl:px-12'
             }`}
-
           >
 
             <div className="flex flex-col lg:flex-row w-full place-content-between lg:place-items-center">
@@ -136,7 +132,7 @@ const NavBar = () => {
 
                 <NavLink
 
-                  href="/service"
+                  href="/capabilities"
 
                   value={sohujiCopy.nav.capabilities}
 
@@ -156,7 +152,7 @@ const NavBar = () => {
 
                 <NavLink
 
-                  href="/how-we-work"
+                  href="/delivery"
 
                   value={sohujiCopy.nav.delivery}
 
@@ -174,16 +170,6 @@ const NavBar = () => {
 
                 />
 
-                <NavLink
-                  href="/solutions"
-                  value={sohujiCopy.nav.solutions}
-                  canActive={true}
-                />
-                <NavLink
-                  href="/quote"
-                  value={sohujiCopy.nav.discovery}
-                  canActive={true}
-                />
               </div>
             </div>
           </div>

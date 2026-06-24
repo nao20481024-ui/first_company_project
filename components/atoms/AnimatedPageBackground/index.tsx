@@ -70,9 +70,12 @@ const AnimatedPageBackground = () => {
 
     let frameId = 0
     let isActive = !document.hidden
+    let lastUpdate = 0
+    const frameInterval = 50
 
     const animate = (now: number) => {
-      if (isActive) {
+      if (isActive && now - lastUpdate >= frameInterval) {
+        lastUpdate = now
         const t = now * 0.001
 
         background.blobs.forEach((blob, index) => {
@@ -92,9 +95,9 @@ const AnimatedPageBackground = () => {
           const dy =
             Math.cos(t * preset.moveSpeed * 0.78 + preset.phase) * preset.moveY
           const pulse =
-            1 + 0.22 * Math.sin(t * preset.pulseSpeed + preset.phase * 1.2)
+            1 + 0.12 * Math.sin(t * preset.pulseSpeed + preset.phase * 1.2)
           const ryPulse =
-            1 + 0.18 * Math.sin(t * preset.pulseSpeed * 1.1 + preset.phase)
+            1 + 0.1 * Math.sin(t * preset.pulseSpeed * 1.1 + preset.phase)
 
           group.setAttribute('transform', `translate(${dx} ${dy})`)
           ellipse.setAttribute('rx', (blob.rx * pulse).toFixed(2))

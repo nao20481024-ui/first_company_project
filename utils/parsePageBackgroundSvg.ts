@@ -77,13 +77,13 @@ export const parsePageBackgroundSvg = (
 }
 
 export const BACKGROUND_ANIMATION_PRESETS = [
-  { phase: 0, moveX: 90, moveY: 70, moveSpeed: 0.32, pulseSpeed: 0.48 },
-  { phase: 1.4, moveX: 75, moveY: 60, moveSpeed: 0.28, pulseSpeed: 0.42 },
-  { phase: 2.8, moveX: 65, moveY: 55, moveSpeed: 0.3, pulseSpeed: 0.5 },
-  { phase: 0.9, moveX: 80, moveY: 65, moveSpeed: 0.27, pulseSpeed: 0.44 },
-  { phase: 3.5, moveX: 70, moveY: 75, moveSpeed: 0.26, pulseSpeed: 0.46 },
-  { phase: 1.9, moveX: 95, moveY: 55, moveSpeed: 0.24, pulseSpeed: 0.4 },
-  { phase: 2.2, moveX: 85, moveY: 60, moveSpeed: 0.25, pulseSpeed: 0.43 },
-  { phase: 0.4, moveX: 70, moveY: 80, moveSpeed: 0.29, pulseSpeed: 0.47 },
-  { phase: 4.1, moveX: 60, moveY: 70, moveSpeed: 0.31, pulseSpeed: 0.52 },
+  { phase: 0, moveX: 45, moveY: 35, moveSpeed: 0.08, pulseSpeed: 0.12 },
+  { phase: 1.4, moveX: 38, moveY: 30, moveSpeed: 0.07, pulseSpeed: 0.11 },
+  { phase: 2.8, moveX: 32, moveY: 28, moveSpeed: 0.075, pulseSpeed: 0.13 },
+  { phase: 0.9, moveX: 40, moveY: 32, moveSpeed: 0.068, pulseSpeed: 0.115 },
+  { phase: 3.5, moveX: 35, moveY: 38, moveSpeed: 0.065, pulseSpeed: 0.12 },
+  { phase: 1.9, moveX: 48, moveY: 28, moveSpeed: 0.06, pulseSpeed: 0.105 },
+  { phase: 2.2, moveX: 42, moveY: 30, moveSpeed: 0.062, pulseSpeed: 0.11 },
+  { phase: 0.4, moveX: 35, moveY: 40, moveSpeed: 0.072, pulseSpeed: 0.125 },
+  { phase: 4.1, moveX: 30, moveY: 35, moveSpeed: 0.078, pulseSpeed: 0.135 },
 ]

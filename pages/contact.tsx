@@ -4,7 +4,7 @@ import TextAreaGroup from 'components/molecules/FormGroup/TextAreaGroup'
 import IconListItem from 'components/molecules/IconListItem'
 import PageSentence from 'components/molecules/PageSentence'
 import PageTemplate from 'components/templates/PageTemplate'
-import { ja, sohujiCopy } from 'constants/sohujiCopy'
+import { sohujiCopy } from 'constants/sohujiCopy'
 import React from 'react'
 import { FiMail } from 'react-icons/fi'
 
@@ -26,7 +26,7 @@ const Contact = () => {
             <div className="space-y-6">
               <IconListItem
                 label={contact.emailLabel}
-                value="support@sohuji.com"
+                value="hello@tokyoai.com"
                 icon={<FiMail />}
               />
             </div>
