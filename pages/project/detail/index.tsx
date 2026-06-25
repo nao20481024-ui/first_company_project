@@ -23,7 +23,7 @@ const ProjectDetail = () => {
     },
   ]
   return (
-    <PageTemplate title='Solution Detail - Tokyoai'>
+    <PageTemplate title='Solution Detail - Dokyoai'>
       <section className="grid place-items-center" data-aos="zoom-in-up">
         <div className="text-center sm:w-10/12 md:w-8/12 lg:w-6/12">
           <PageSentence

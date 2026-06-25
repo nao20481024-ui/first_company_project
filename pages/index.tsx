@@ -40,15 +40,13 @@ const principleIcons = [
 const Home = () => {
   return (
     <PageTemplate title={`Home - ${sohujiCopy.brand.name}`}>
-      <section
-        className="flex flex-col gap-10 items-center justify-center min-h-[calc(100vh-105px)]"
-        data-aos="fade-up"
-      >
-        <div className="w-10/12 md:w-8/12 text-center">
+      <section className="flex flex-col gap-12 md:gap-14 items-center justify-center min-h-screen !-mt-[105px] pt-[105px] pb-24 md:pb-32 !mb-0 px-6">
+        <div className="w-full max-w-5xl mx-auto text-center">
           <PageSentence
             title={home.title}
             description={home.description}
             badge={home.badge}
+            size="hero"
           />
         </div>
         <div className="flex flex-col gap-6 sm:flex-row w-full sm:w-fit">

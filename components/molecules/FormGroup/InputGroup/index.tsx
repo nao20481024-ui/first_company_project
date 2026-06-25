@@ -9,6 +9,9 @@ interface InputGroupProps extends InputProps {
 const InputGroup = ({
   label,
   defaultValue,
+  value,
+  name,
+  type,
   onChange,
   onSubmit,
   required,
@@ -23,6 +26,9 @@ const InputGroup = ({
       <Label label={label} htmlFor={randomId} />
       <Input
         defaultValue={defaultValue}
+        value={value}
+        name={name}
+        type={type}
         id={randomId}
         onChange={onChange}
         onSubmit={onSubmit}

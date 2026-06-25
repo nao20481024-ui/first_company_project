@@ -30,11 +30,11 @@ const CapabilityDetail = () => {
     },
     {
       title: `Where do you draw the line between agents and deterministic workflows?`,
-      description: `Ambiguous work gets tool-augmented agent loops with budgets and timeouts; money-moving and SLA-critical steps live in explicit graphs with typed I/O and idempotency keys. HITL gates prevent silent changes to authoritative state.`,
+      description: `Ambiguous work gets tool augmented agent loops with budgets and timeouts; money moving and SLA critical steps live in explicit graphs with typed I/O and idempotency keys. HITL gates prevent silent changes to authoritative state.`,
     },
     {
       title: `Which n8n patterns do you standardize for scale?`,
-      description: `Composable sub-workflows, dedicated error and DLQ paths, queue mode when throughput requires it, secrets via your vault, execution records suitable for replay, and alerting on failure rate, p95 latency, and queue depth.`,
+      description: `Composable sub workflows, dedicated error and DLQ paths, queue mode when throughput requires it, secrets via your vault, execution records suitable for replay, and alerting on failure rate, p95 latency, and queue depth.`,
     },
     {
       title: `How do you keep LLM calls inside n8n maintainable?`,
@@ -42,7 +42,7 @@ const CapabilityDetail = () => {
     },
     {
       title: `What does observability and cost control look like end to end?`,
-      description: `Correlated request IDs across workflows and model calls, token and latency dashboards by route, redacted failure payloads for replays, concurrency caps aligned with provider limits, and staged rollouts when changes touch customer-visible behavior.`,
+      description: `Correlated request IDs across workflows and model calls, token and latency dashboards by route, redacted failure payloads for replays, concurrency caps aligned with provider limits, and staged rollouts when changes touch customer visible behavior.`,
     },
     {
       title: `Do you build operator software on top of automations?`,
@@ -53,45 +53,45 @@ const CapabilityDetail = () => {
     {
       title: 'Eval harnesses',
       description:
-        'Held-out eval sets, precision/recall proxies, and refusal rates tracked before and after rollout.',
+        'Held out eval sets, precision/recall proxies, and refusal rates tracked before and after rollout.',
       icon: <FiActivity />,
     },
     {
       title: 'Tool contracts',
-      description: `MCP-style typed surfaces with governed access and replay-friendly execution.`,
+      description: `MCP style typed surfaces with governed access and replay friendly execution.`,
       icon: <FiLayers />,
     },
     {
       title: 'Versioned prompts',
-      description: `Model policy in versioned prompts and explicit schemas—not ad-hoc canvas edits in production.`,
+      description: `Model policy in versioned prompts and explicit schemas, not ad hoc canvas edits in production.`,
       icon: <FiCpu />,
     },
     {
       title: 'Trace correlation',
       description:
-        'End-to-end traces across workflows and model calls with token and latency SLOs.',
+        'End to end traces across workflows and model calls with token and latency SLOs.',
       icon: <FiTrendingUp />,
     },
     {
-      title: 'Failure-mode design',
-      description: `Idempotency keys, bounded retries, poison-message handling, and crisp orchestration boundaries.`,
+      title: 'Failure mode design',
+      description: `Idempotency keys, bounded retries, poison message handling, and crisp orchestration boundaries.`,
       icon: <FiShield />,
     },
     {
-      title: 'Queue-aware n8n',
+      title: 'Queue aware n8n',
       description:
-        'Sub-workflows, DLQ branches, and horizontal workers when throughput or long jobs require it.',
+        'Sub workflows, DLQ branches, and horizontal workers when throughput or long jobs require it.',
       icon: <FiGitBranch />,
     },
   ]
   return (
-    <PageTemplate title="Capabilities - Tokyoai">
+    <PageTemplate title="Capabilities - Dokyoai">
       <section className="grid place-items-center">
         <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 text-center">
           <PageSentence
             badge="CAPABILITIES"
             title="Harden your AI and automation footprint for production traffic"
-            description="We partner on agentic systems, retrieval pipelines, MCP-style integrations, and n8n operations—with evals, tracing, and release hygiene your platform org expects."
+            description="We partner on agentic systems, retrieval pipelines, MCP style integrations, and n8n operations, with evals, tracing, and release hygiene your platform org expects."
           />
         </div>
       </section>
@@ -112,15 +112,15 @@ const CapabilityDetail = () => {
           <div className="sm:w-10/12 md:w-8/12 lg:w-full lg:text-left grid gap-10">
             <div className="grid gap-8">
               <Text
-                value={`From greenfield portals to hardening existing graphs and model routes, we scope to measurable outcomes and ship with staging paths, rollback, and runbooks—not slideware. <br> <br> Customer and internal web apps, agentic and RAG workloads, and n8n at queue-aware scale—all with observability, contracts, and release discipline expected of core infrastructure.`}
+                value={`From greenfield portals to hardening existing graphs and model routes, we scope to measurable outcomes and ship with staging paths, rollback, and runbooks, not slideware. <br> <br> Customer and internal web apps, agentic and RAG workloads, and n8n at queue aware scale, all with observability, contracts, and release discipline expected of core infrastructure.`}
                 textStyle={'SectionParagraph'}
               />
             </div>
             <ul className="list-square text-white text-base font-medium pl-5 grid gap-2.5">
               <li>RAG with eval harnesses, tool schemas, and guardrails</li>
-              <li>MCP-style exposure with HITL gates and mutation guards</li>
+              <li>MCP style exposure with HITL gates and mutation guards</li>
               <li>Operator UIs for review queues, approvals, and replay</li>
-              <li>Trace-driven iteration after cutover, not ad-hoc prompt edits</li>
+              <li>Trace driven iteration after cutover, not ad hoc prompt edits</li>
             </ul>
           </div>
           <div className="grid gap-6 w-full place-items-end md:w-8/12 lg:w-full"></div>

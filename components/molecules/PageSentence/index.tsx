@@ -1,25 +1,36 @@
 import Text from 'components/atoms/Text'
 import React from 'react'
-interface SectionSentenceProps {
+
+interface PageSentenceProps {
   badge?: string
   title?: string
   description?: string
   badgeStyle?: 'success' | 'error'
+  size?: 'default' | 'hero'
 }
+
 const PageSentence = ({
   title = '',
   description = '',
   badge = '',
   badgeStyle = 'success',
-}: SectionSentenceProps) => {
+  size = 'default',
+}: PageSentenceProps) => {
+  const isHero = size === 'hero'
+  const badgeClass = isHero
+    ? 'text-badge font-semibold text-lg sm:text-xl tracking-widest'
+    : undefined
+
   return (
-    <article className={`space-y-6`}>
+    <article className={isHero ? 'space-y-8' : 'space-y-6'}>
       {title == '' && badge == '' ? (
         ''
       ) : (
-        <div className="space-y-1">
+        <div className={isHero ? 'space-y-4' : 'space-y-1'}>
           {badge == '' ? (
             ''
+          ) : badgeClass ? (
+            <p className={badgeClass}>{badge}</p>
           ) : (
             <Text
               value={badge}
@@ -28,13 +39,23 @@ const PageSentence = ({
               }
             />
           )}
-          {title == '' ? '' : <Text value={title} textStyle="PageTitle" />}
+          {title == '' ? (
+            ''
+          ) : (
+            <Text
+              value={title}
+              textStyle={isHero ? 'HeroPageTitle' : 'PageTitle'}
+            />
+          )}
         </div>
       )}
       {description == '' ? (
         ''
       ) : (
-        <Text value={description} textStyle="PageDescription" />
+        <Text
+          value={description}
+          textStyle={isHero ? 'HeroPageDescription' : 'PageDescription'}
+        />
       )}
     </article>
   )

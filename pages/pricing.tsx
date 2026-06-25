@@ -20,7 +20,7 @@ const Pricing = () => {
         >
           <PageSentence
             badge={home.engagement.badge}
-            title="Discovery through operated systems—scoped to measurable outcomes"
+            title="Discovery through operated systems, scoped to measurable outcomes"
           />
         </div>
       </section>

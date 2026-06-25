@@ -1,16 +1,19 @@
 import Text from 'components/atoms/Text'
 import React from 'react'
+
 interface IconListItemProps {
   label?: string
   value: string
   icon: JSX.Element
+  href?: string
 }
-const IconListItem = ({ icon, value, label = '' }: IconListItemProps) => {
-  return (
+
+const IconListItem = ({ icon, value, label = '', href }: IconListItemProps) => {
+  const content = (
     <div
       className={`flex flex-row place-content-between place-items-center w-fit ${
         label == '' ? 'space-x-6' : 'space-x-7'
-      }`}
+      } ${href ? 'group' : ''}`}
     >
       <div
         className={`rounded bg-light ${label == '' ? 'p-2.5' : 'p-5'} ${
@@ -28,6 +31,24 @@ const IconListItem = ({ icon, value, label = '' }: IconListItemProps) => {
         )}
       </div>
     </div>
+  )
+
+  if (!href) {
+    return content
+  }
+
+  const isExternal = href.startsWith('http') || href.startsWith('mailto:')
+
+  return (
+    <a
+      href={href}
+      className="block w-fit transition-opacity hover:opacity-80"
+      {...(isExternal && href.startsWith('http')
+        ? { target: '_blank', rel: 'noopener noreferrer' }
+        : {})}
+    >
+      {content}
+    </a>
   )
 }
 

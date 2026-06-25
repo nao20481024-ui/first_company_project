@@ -3,6 +3,8 @@ import React, { forwardRef, MouseEventHandler } from 'react'
 interface ButtonProps {
   value: string
   onClick?: MouseEventHandler<HTMLButtonElement>
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
   size?: 'normal' | 'small'
   style?: 'light' | 'outline' | 'solid'
   color?: 'white' | 'primary'
@@ -13,6 +15,8 @@ const Button = forwardRef(
     {
       value,
       onClick = () => {},
+      type = 'button',
+      disabled = false,
       size = 'normal',
       style = 'solid',
       color = 'primary',
@@ -64,9 +68,11 @@ const Button = forwardRef(
     }
     return (
         <button
+          type={type}
+          disabled={disabled}
           className={`${getSizeStyles()} ${getStyleStyles()} ${getRadiusStyles()} transition-all select-none ${
             isMobile ? 'cursor-default' : 'cursor-pointer'
-          }`}
+          } ${disabled ? 'opacity-60 cursor-not-allowed' : ''}`}
           onClick={onClick}
           ref={ref}
         >

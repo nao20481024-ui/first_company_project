@@ -8,7 +8,14 @@ import dynamic from 'next/dynamic'
 
 const AnimatedPageBackground = dynamic(
   () => import('components/atoms/AnimatedPageBackground'),
-  { ssr: false },
+  {
+    ssr: false,
+    loading: () => (
+      <div className="page-background-root" aria-hidden="true">
+        <div className="page-background-gradient" />
+      </div>
+    ),
+  },
 )
 
 interface PageTemplateProps {
@@ -16,7 +23,7 @@ interface PageTemplateProps {
   title?: string
 }
 
-const PageTemplate = ({ children, title = 'Tokyoai' }: PageTemplateProps) => {
+const PageTemplate = ({ children, title = 'Dokyoai' }: PageTemplateProps) => {
   return (
     <>
       <Head>
@@ -25,8 +32,8 @@ const PageTemplate = ({ children, title = 'Tokyoai' }: PageTemplateProps) => {
       <NavBar />
       <div className="w-full h-fit min-h-screen bg-dark overflow-x-hidden relative">
         <AnimatedPageBackground />
-        <div className="relative z-[1] w-full min-h-screen bg-dark/[.72] overflow-visible">
-          <div className="h-[105px]"></div>
+        <div className="relative z-[1] w-full min-h-screen bg-dark/60 overflow-visible">
+          <div className="h-[105px]" />
           <Container>
             {children}
             <div data-aos="fade-right">

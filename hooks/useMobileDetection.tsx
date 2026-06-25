@@ -1,25 +1,24 @@
 import { useEffect, useState } from 'react'
-import ua from 'ua-parser-js'
+
 const useMobileDeviceDetection: () => boolean = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false)
+  const [isMobile, setIsMobile] = useState(false)
+
   useEffect(() => {
-    deviceTypeHandler()
-    window.addEventListener('resize', () => deviceTypeHandler())
-    window.addEventListener('scroll', () => deviceTypeHandler())
+    const media = window.matchMedia('(hover: none) and (pointer: coarse)')
+
+    const update = () => {
+      setIsMobile(media.matches)
+    }
+
+    update()
+    media.addEventListener('change', update)
+
+    return () => {
+      media.removeEventListener('change', update)
+    }
   }, [])
 
-  const deviceTypeHandler: () => void = () => {
-    switch (ua.UAParser().device.type) {
-      case ua.DEVICE.MOBILE:
-        setIsMobile(true)
-        break
-      case ua.DEVICE.TABLET:
-        setIsMobile(true)
-        break
-      default:
-        setIsMobile(false)
-    }
-  }
   return isMobile
 }
+
 export default useMobileDeviceDetection

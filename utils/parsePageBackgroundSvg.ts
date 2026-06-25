@@ -12,68 +12,85 @@ export type BackgroundViewBox = {
   height: number
 }
 
-const getAttr = (element: string, name: string) => {
-  const match = element.match(new RegExp(`${name}="([^"]+)"`))
-  return match?.[1] ?? ''
-}
-
-export const parsePageBackgroundSvg = (
-  raw: string,
-): { blobs: ParsedBackgroundBlob[]; viewBox: BackgroundViewBox } => {
-  const svg = raw
-    .replace(/ns0:/g, '')
-    .replace(/xmlns:ns0="[^"]*"/g, '')
-
-  const viewBoxMatch = svg.match(/viewBox="([^"]+)"/)
-  const widthMatch = svg.match(/width="([^"]+)"/)
-  const heightMatch = svg.match(/height="([^"]+)"/)
-
-  let width = 1440
-  let height = 5463
-
-  if (viewBoxMatch) {
-    const parts = viewBoxMatch[1].split(/\s+/).map(Number)
-    if (parts.length === 4) {
-      width = parts[2]
-      height = parts[3]
-    }
-  } else {
-    if (widthMatch) width = Number(widthMatch[1])
-    if (heightMatch) height = Number(heightMatch[1])
-  }
-
-  const blobs: ParsedBackgroundBlob[] = []
-
-  const ellipseMatches = svg.match(/<ellipse[^>]*\/?>/gi) ?? []
-
-  for (const element of ellipseMatches) {
-    const rx = Number(getAttr(element, 'rx'))
-    const ry = Number(getAttr(element, 'ry'))
-    const fill = getAttr(element, 'fill')
-    const transform = getAttr(element, 'transform')
-    const matrixMatch = transform.match(/matrix\(([^)]+)\)/)
-
-    if (!matrixMatch || !rx || !ry || !fill) {
-      continue
-    }
-
-    const parts = matrixMatch[1].trim().split(/[\s,]+/).map(Number)
-
-    if (parts.length < 6) {
-      continue
-    }
-
-    blobs.push({
-      rx,
-      ry,
-      tx: parts[4],
-      ty: parts[5],
-      matrix: parts.slice(0, 4).join(' '),
-      fill,
-    })
-  }
-
-  return { blobs, viewBox: { width, height } }
+export const PAGE_BACKGROUND: {
+  blobs: ParsedBackgroundBlob[]
+  viewBox: BackgroundViewBox
+} = {
+  viewBox: { width: 1440, height: 5463 },
+  blobs: [
+    {
+      rx: 392.146,
+      ry: 385.089,
+      tx: 688.182,
+      ty: 340.376,
+      matrix: '0.969732 -0.244172 0.253855 0.967242',
+      fill: '#16FCD2',
+    },
+    {
+      rx: 219.466,
+      ry: 215.517,
+      tx: 355.533,
+      ty: 1525.21,
+      matrix: '0.969732 -0.244172 0.253855 0.967242',
+      fill: '#FCA016',
+    },
+    {
+      rx: 178.305,
+      ry: 175.096,
+      tx: 584.357,
+      ty: 1318.36,
+      matrix: '0.969732 -0.244172 0.253855 0.967242',
+      fill: '#16FCD2',
+    },
+    {
+      rx: 219.466,
+      ry: 215.517,
+      tx: 893.533,
+      ty: 2162.85,
+      matrix: '0.969732 -0.244172 0.253855 0.967242',
+      fill: '#FC165B',
+    },
+    {
+      rx: 178.305,
+      ry: 175.096,
+      tx: 1122.36,
+      ty: 1956.01,
+      matrix: '0.969732 -0.244172 0.253855 0.967242',
+      fill: '#6016FC',
+    },
+    {
+      rx: 392.146,
+      ry: 385.089,
+      tx: 151.033,
+      ty: 475.626,
+      matrix: '0.969732 -0.244172 0.253855 0.967242',
+      fill: '#FCA016',
+    },
+    {
+      rx: 392.146,
+      ry: 385.089,
+      tx: 1010.47,
+      ty: 259.226,
+      matrix: '0.969732 -0.244172 0.253855 0.967242',
+      fill: '#FC165B',
+    },
+    {
+      rx: 219.466,
+      ry: 215.517,
+      tx: 1058.25,
+      ty: 5200.04,
+      matrix: '0.969732 -0.244172 0.253855 0.967242',
+      fill: '#16FCD2',
+    },
+    {
+      rx: 178.305,
+      ry: 175.096,
+      tx: 341.357,
+      ty: 5122.9,
+      matrix: '0.969732 -0.244172 0.253855 0.967242',
+      fill: '#6016FC',
+    },
+  ],
 }
 
 export const BACKGROUND_ANIMATION_PRESETS = [

@@ -1,5 +1,4 @@
 import 'styles/globals.css'
-import 'aos/dist/aos.css'
 import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 
@@ -8,10 +7,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     let cancelled = false
 
     const initAos = async () => {
+      await import('aos/dist/aos.css')
       const { default: AOS } = await import('aos')
 
       if (!cancelled) {
-        AOS.init({ duration: 600, once: true })
+        AOS.init({
+          duration: 600,
+          once: true,
+        })
       }
     }
 
@@ -19,10 +22,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       typeof window.requestIdleCallback === 'function'
         ? window.requestIdleCallback(() => {
             void initAos()
-          })
+          }, { timeout: 1200 })
         : window.setTimeout(() => {
             void initAos()
-          }, 200)
+          }, 400)
 
     return () => {
       cancelled = true

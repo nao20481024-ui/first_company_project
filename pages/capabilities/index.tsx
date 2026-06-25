@@ -87,7 +87,7 @@ const Capabilities = () => {
                 />
                 <SmallCardIcon
                   title="Eval harnesses"
-                  description="Offline eval sets and refusal tracking before customer-facing rollout."
+                  description="Offline eval sets and refusal tracking before customer facing rollout."
                   icon={<FiActivity />}
                 />
               </aside>
@@ -116,7 +116,7 @@ const Capabilities = () => {
                 />
                 <CardListIcon
                   icon={<FiShield />}
-                  title="Least-privilege access"
+                  title="Least privilege access"
                 />
               </aside>
               <TextArrowLink label="Capability detail" href="/capabilities/detail" />
@@ -158,7 +158,7 @@ const Capabilities = () => {
               <aside className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
                 <IconListItem
                   icon={<FiGitBranch />}
-                  value="Sub-workflows & dead-letter paths"
+                  value="Sub workflows & dead letter paths"
                 />
                 <IconListItem
                   icon={<FiActivity />}
@@ -170,7 +170,7 @@ const Capabilities = () => {
                 />
                 <IconListItem
                   icon={<FiShield />}
-                  value="Audit-ready logs"
+                  value="Audit ready logs"
                 />
               </aside>
               <TextArrowLink label="Capability detail" href="/capabilities/detail" />

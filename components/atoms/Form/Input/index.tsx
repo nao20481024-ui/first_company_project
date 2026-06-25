@@ -1,6 +1,9 @@
 import React from 'react'
 interface InputProps {
   defaultValue?: string | number
+  value?: string | number
+  name?: string
+  type?: React.HTMLInputTypeAttribute
   onChange?: React.ChangeEventHandler<HTMLInputElement>
   onSubmit?: React.FormEventHandler<HTMLInputElement>
   required?: boolean
@@ -9,6 +12,9 @@ interface InputProps {
 }
 const Input = ({
   defaultValue = '',
+  value,
+  name,
+  type = 'text',
   onChange = () => {},
   onSubmit = () => {},
   required = false,
@@ -18,9 +24,11 @@ const Input = ({
   return (
     <>
       <input
-        type="text"
+        type={type}
+        name={name}
         className="w-full bg-transparent border-borderLight text-white text-opacity-40 px-4 py-2 rounded focus:bg-light border      focus:border-white focus:border-opacity-30"
-        defaultValue={defaultValue}
+        defaultValue={value === undefined ? defaultValue : undefined}
+        value={value}
         onChange={onChange}
         onSubmit={onSubmit}
         required={required}

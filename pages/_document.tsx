@@ -8,13 +8,7 @@ const Document = () => {
       <Head>
           <meta name="description" content={sohujiCopy.meta.description} />
           <meta name="robots" content="index, follow" />
-          <meta name='tags' content='ai,llm,agentic,rag,automation,observability,software,tokyoai' />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+          <meta name='tags' content='ai,llm,agentic,rag,automation,observability,software,dokyoai' />
       </Head>
         <body>
             <Main />

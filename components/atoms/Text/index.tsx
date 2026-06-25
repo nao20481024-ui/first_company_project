@@ -6,7 +6,9 @@ interface TextProps {
     | 'SectionBadgeError'
     | 'SectionParagraph'
     | 'PageTitle'
+    | 'HeroPageTitle'
     | 'PageDescription'
+    | 'HeroPageDescription'
     | 'SectionTitle'
     | 'CardTitle'
     | 'CardParagraph'
@@ -66,8 +68,12 @@ const Text = ({ value, textStyle }: TextProps) => {
         return 'text-muted font-medium text-base leading-8'
       case 'PageTitle':
         return 'text-white font-bold text-4xl leading-13.5'
+      case 'HeroPageTitle':
+        return 'text-white font-bold text-5xl sm:text-6xl lg:text-7xl leading-[1.1] tracking-tight'
       case 'PageDescription':
         return 'text-muted font-medium text-base leading-8'
+      case 'HeroPageDescription':
+        return 'text-muted font-medium text-lg sm:text-xl lg:text-2xl leading-relaxed'
       case 'PageSubtitle':
         return 'text-white font-bold text-3xl leading-12'
       case 'PageContent':
@@ -159,7 +165,7 @@ const Text = ({ value, textStyle }: TextProps) => {
     }
   }
 
-  return <p className={getTextStyle()}>{htmlParser(value)}</p>
+  return <p className={getTextStyle()}>{value.includes('<') ? htmlParser(value) : value}</p>
 }
 
 export default Text

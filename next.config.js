@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    optimizePackageImports: ['react-icons', 'react-icons/fi', 'aos'],
+  },
   webpack: (config, { dev }) => {
     // Avoid EBUSY file-lock errors on Windows when webpack writes pack cache under .next
     if (dev) {

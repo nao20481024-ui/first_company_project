@@ -9,6 +9,8 @@ interface TextAreaGroupProps extends TextAreaProps {
 const TextAreaGroup = ({
   label,
   defaultValue,
+  value,
+  name,
   onChange,
   onSubmit,
   required,
@@ -24,6 +26,8 @@ const TextAreaGroup = ({
       <Label label={label} htmlFor={randomId} />
       <TextArea
         defaultValue={defaultValue}
+        value={value}
+        name={name}
         id={randomId}
         onChange={onChange}
         onSubmit={onSubmit}

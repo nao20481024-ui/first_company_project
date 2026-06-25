@@ -36,6 +36,16 @@
   .swiper-slide-active {
     @apply border-2 border-primary mt-0 !important;
   }
+
+  .nav-surface {
+    @apply bg-light;
+  }
+
+  @supports (-moz-appearance: none) {
+    .nav-surface {
+      background-color: rgba(17, 24, 39, 0.8);
+    }
+  }
 }
 
 .page-background-root {
@@ -45,6 +55,7 @@
   overflow: hidden;
   pointer-events: none;
   background-color: #0b0b22;
+  contain: strict;
 }
 
 .page-background-gradient {
@@ -55,4 +66,18 @@
     radial-gradient(ellipse 55% 40% at 85% 25%, rgba(252, 22, 91, 0.1), transparent),
     radial-gradient(ellipse 60% 45% at 50% 90%, rgba(96, 22, 252, 0.08), transparent),
     #0b0b22;
+}
+
+.page-background-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.page-background-svg-ready {
+  opacity: 1;
 }

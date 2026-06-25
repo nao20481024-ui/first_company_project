@@ -1,4 +1,5 @@
 import useMobileDeviceDetection from 'hooks/useMobileDetection'
+import { sohujiCopy } from 'constants/sohujiCopy'
 import Link from 'next/link'
 import React from 'react'
 
@@ -19,7 +20,7 @@ const NavBrand = ({ variant = 'navbar' }: NavBrandProps) => {
       className={`select-none ${isMobile ? 'cursor-default' : 'cursor-pointer'}`}
     >
       <Link href="/" className="shrink-0 w-fit">
-        <div className={textClass}>Tokyoai</div>
+        <div className={textClass}>{sohujiCopy.brand.name}</div>
       </Link>
     </div>
   )
